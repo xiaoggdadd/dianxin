@@ -1,0 +1,23 @@
+<!DOCTYPE dwr PUBLIC
+    "-//GetAhead Limited//DTD Direct Web Remoting 1.0//EN"
+    "http://www.getahead.ltd.uk/dwr/dwr10.dtd">
+
+<dwr>
+	<allow>
+		<create creator="new" javascript="fybzglServise">
+			<param name="class" value="com.noki.fybzgl.servise.fybzglServise" />
+		</create>
+		<convert converter="bean" match="com.noki.fybzgl.bean.fybzglBean" />
+		
+		
+		<create creator="new" javascript="zdyzhandianServise">
+			<param name="class" value="com.noki.zdymess.servies.zdyzhandianServise" />
+		</create>
+	    <convert converter="bean" match="com.noki.zdymess.dao.zdyzhandian" />
+	    
+	    <create creator="new" javascript="dataUpdateService">
+			<param name="class" value="com.noki.dataedit.service.dataUpdateService" />
+		</create>
+	    
+	</allow>
+</dwr>

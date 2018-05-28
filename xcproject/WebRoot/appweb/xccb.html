@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta name="viewport"content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta charset="utf-8" />
+<title>中国电信山东分公司能耗管理系统</title>
+<!-- basic styles -->
+
+<link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+
+<!--[if IE 7]>
+		  <link rel="stylesheet" href="assets/css/font-awesome-ie7.min.css" />
+		<![endif]-->
+
+<!-- page specific plugin styles -->
+
+<link rel="stylesheet" href="assets/css/jquery-ui-1.10.3.custom.min.css" />
+<link rel="stylesheet" href="assets/css/chosen.css" />
+<link rel="stylesheet" href="assets/css/datepicker.css" />
+<link rel="stylesheet" href="assets/css/bootstrap-timepicker.css" />
+<link rel="stylesheet" href="assets/css/daterangepicker.css" />
+<link rel="stylesheet" href="assets/css/colorpicker.css" />
+
+<!-- fonts -->
+
+
+
+<!-- ace styles -->
+
+<link rel="stylesheet" href="assets/css/ace.min.css" />
+<link rel="stylesheet" href="assets/css/ace-rtl.min.css" />
+<link rel="stylesheet" href="assets/css/ace-skins.min.css" />
+
+<!--[if lte IE 8]>
+		  <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
+		<![endif]-->
+
+<!-- inline styles related to this page -->
+
+<!-- ace settings handler -->
+
+<script src="assets/js/ace-extra.min.js"></script>
+
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+
+<!--[if lt IE 9]>
+		<script src="assets/js/html5shiv.js"></script>
+		<script src="assets/js/respond.min.js"></script>
+		<![endif]-->
+
+</head>
+
+<body>
+	<div class="navbar navbar-default" id="navbar">
+		<script type="text/javascript">
+			try {
+				ace.settings.check('navbar', 'fixed')
+			} catch (e) {
+			}
+		</script>
+
+		<div class="navbar-container" id="navbar-container">
+			<div class="navbar-header pull-left">
+				<a href="#" class="navbar-brand"> <small>
+						中国电信山东分公司能耗管理系统 </small> </a>
+				<!-- /.brand -->
+			</div>
+			<!-- /.navbar-header -->
+		</div>
+		<!-- /.container -->
+	</div>
+
+	<div class="main-container" id="main-container">
+		<script type="text/javascript">
+			try {
+				ace.settings.check('main-container', 'fixed')
+			} catch (e) {
+			}
+		</script>
+
+		<div class="main-container-inner">
+			<a class="menu-toggler" id="menu-toggler" href="#"> <span
+				class="menu-text"></span> </a>
+
+			<div class="sidebar" id="sidebar">
+				<script type="text/javascript">
+					try {
+						ace.settings.check('sidebar', 'fixed')
+					} catch (e) {
+					}
+				</script>
+
+				<div class="sidebar-shortcuts" id="sidebar-shortcuts">
+					<div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
+						<button class="btn btn-success">
+							<i class="icon-signal"></i>
+						</button>
+
+						<button class="btn btn-info">
+							<i class="icon-pencil"></i>
+						</button>
+
+						<button class="btn btn-warning">
+							<i class="icon-group"></i>
+						</button>
+
+						<button class="btn btn-danger">
+							<i class="icon-cogs"></i>
+						</button>
+					</div>
+
+					<div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
+						<span class="btn btn-success"></span> <span class="btn btn-info"></span>
+
+						<span class="btn btn-warning"></span> <span class="btn btn-danger"></span>
+					</div>
+				</div>
+				<!-- #sidebar-shortcuts -->
+
+				<ul class="nav nav-list">
+					<li class="active"><a href="index.html"> <i
+							class="icon-dashboard"></i> <span class="menu-text"> 控制台 </span>
+					</a>
+					</li>
+
+					<li><a href="xccb.html"> <i class="icon-text-width"></i> <span
+							class="menu-text"> 现场抄表 </span> </a>
+					</li>
+
+					<li><a href="cbyj.jsp"> <i class="icon-desktop"></i> <span
+							class="menu-text"> 超标预警 </span> </a>
+					</li>
+
+					<li><a href="dzjc.html"> <i class="icon-list"></i> <span
+							class="menu-text"> 电子稽核 </span> </a>
+					</li>
+
+					<li><a href="jfyj.html"> <i class="icon-tag"></i> <span
+							class="menu-text"> 缴费预警 </span> </a>
+					</li>
+
+					<li><a href="jzxz.html"> <i class="icon-file-alt"></i> <span
+							class="menu-text"> 局站修正 </span> </a>
+					</li>
+
+					<li><a href="gdpf.html"> <i class="icon-list-alt"></i> <span
+							class="menu-text"> 工单派发 </span> </a>
+					</li>
+				</ul>
+				<!-- /.nav-list -->
+
+				<div class="sidebar-collapse" id="sidebar-collapse">
+					<i class="icon-double-angle-left"
+						data-icon1="icon-double-angle-left"
+						data-icon2="icon-double-angle-right"></i>
+				</div>
+
+				<script type="text/javascript">
+					try {
+						ace.settings.check('sidebar', 'collapsed')
+					} catch (e) {
+					}
+				</script>
+			</div>
+
+			<div class="main-content">
+				<div class="breadcrumbs" id="breadcrumbs">
+					<script type="text/javascript">
+						try {
+							ace.settings.check('breadcrumbs', 'fixed')
+						} catch (e) {
+						}
+					</script>
+
+					<ul class="breadcrumb">
+						<li><i class="icon-home home-icon"></i> <a href="#">首页</a>
+						</li>
+						<li class="active">现场抄表</li>
+					</ul>
+					<!-- .breadcrumb -->
+				</div>
+
+				<div class="page-content">
+					<div class="page-header">
+						<h1>现场抄表</h1>
+					</div>
+					<!-- /.page-header -->
+
+					<div class="row">
+						<div class="col-xs-12">
+							<!-- PAGE CONTENT BEGINS -->
+
+							<form class="form-horizontal" role="form" enctype="multipart/form-data" method="post" id="form" action="http://219.146.23.234:9000/dianxin/CBUserSendMessageServlet">
+								<div class="form-group">
+									<label class="col-sm-3 control-label no-padding-right"
+										for="form-field-1"> 抄表基站 </label>
+
+									<div class="col-sm-9">
+										<select class="width-40 form-control"
+											id="form-field-select-3" name="jzid"
+											data-placeholder="选择一个站点">
+											<option value="">请选择</option>
+										</select>
+									</div>
+								</div>
+
+								<div class="space-4"></div>
+
+								<div class="form-group">
+									<label class="col-sm-3 control-label no-padding-right"
+										for="form-field-1"> 抄表电表 </label>
+
+									<div class="col-sm-9">
+										<select class="width-40 form-control" id="form-field-select-1" name="dbid">
+											<option value="">请选择</option>
+										</select>
+									</div>
+								</div>
+
+								<div class="space-4"></div>
+
+								<div class="form-group">
+									<label class="col-sm-3 control-label no-padding-right"
+										for="form-field-1"> 上次抄表时间 </label>
+
+									<div class="col-sm-9">
+										<input readonly="true" type="text" id="form-field-1" placeholder="上次抄表时间" name="lastCBTime"
+											class="col-xs-10 col-sm-5" />
+									</div>
+								</div>
+
+								<div class="space-4"></div>
+
+								<div class="form-group">
+									<label class="col-sm-3 control-label no-padding-right"
+										for="form-field-1"> 上次抄表读数 </label>
+
+									<div class="col-sm-9">
+										<input readonly="true" type="text" id="form-field-2" placeholder="上次抄表读数" name="lastDlValue"
+											class="col-xs-10 col-sm-5" />
+									</div>
+								</div>
+
+								<div class="space-4"></div>
+
+								<div class="form-group">
+									<label class="col-sm-3 control-label no-padding-right"
+										for="form-field-1"> 本次抄表读数 </label>
+
+									<div class="col-sm-9">
+										<input type="text" id="form-field-3" placeholder="本次抄表读数" name="dlValue"
+											class="col-xs-10 col-sm-5" />
+										<input type="file" accept="image/*" id="capture1" capture="camera" name="path1">
+									</div>
+								</div>
+
+								<div class="space-4"></div>
+
+								<div class="form-group">
+									<label class="col-sm-3 control-label no-padding-right"
+										for="form-field-1"> 机房信息 </label>
+
+									<div class="col-sm-9">
+										<input type="text" id="form-field-4" placeholder="机房信息" name="jfxx"
+											class="col-xs-10 col-sm-5" />
+										<input type="file" accept="image/*" id="capture2" capture="camera" name="path2">
+									</div>
+								</div>
+
+								<div class="space-4"></div>
+
+								<div class="form-group">
+									<label class="col-sm-3 control-label no-padding-right"
+										for="form-field-1"> 电表串号 </label>
+
+									<div class="col-sm-9">
+										<input type="text" id="form-field-5" placeholder="电表串号" name = "dbch"
+											class="col-xs-10 col-sm-5" />
+										<input type="file" accept="image/*" id="capture3" capture="camera" name="path3">
+									</div>
+								</div>
+
+								<div class="clearfix form-actions">
+									<div class="col-md-offset-3 col-md-9">
+										<button class="btn btn-info" type="button" id="sendForm">
+											<i class="icon-ok bigger-110"></i> 提交
+										</button>
+
+										&nbsp; &nbsp; &nbsp;
+										<button class="btn" type="reset" id="resetForm">
+											<i class="icon-undo bigger-110"></i> 重置
+										</button>
+									</div>
+								</div>
+							</form>
+							<!-- PAGE CONTENT ENDS -->
+						</div>
+						<!-- /.col -->
+					</div>
+					<!-- /.row -->
+				</div>
+				<!-- /.page-content -->
+			</div>
+			<!-- /.main-content -->
+		</div>
+		<!-- /.main-container-inner -->
+	</div>
+	<!-- /.main-container -->
+
+	<!-- basic scripts -->
+
+	<!--[if !IE]> -->
+
+	<!-- <![endif]-->
+
+	<!--[if IE]>
+<![endif]-->
+
+	<!--[if !IE]> -->
+
+	<script type="text/javascript">
+		window.jQuery
+				|| document
+						.write("<script src='assets/js/jquery-2.0.3.min.js'>"
+								+ "<" + "script>");
+	</script>
+
+	<!-- <![endif]-->
+
+	<!--[if IE]>
+<script type="text/javascript">
+ window.jQuery || document.write("<script src='assets/js/jquery-1.10.2.min.js'>"+"<"+"script>");
+</script>
+<![endif]-->
+
+	<script type="text/javascript">
+		if ("ontouchend" in document)
+			document
+					.write("<script src='assets/js/jquery.mobile.custom.min.js'>"
+							+ "<" + "script>");
+	</script>
+	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="assets/js/typeahead-bs2.min.js"></script>
+
+	<!-- page specific plugin scripts -->
+
+	<!--[if lte IE 8]>
+		  <script src="assets/js/excanvas.min.js"></script>
+		<![endif]-->
+
+	<script type="text/javascript">
+		if ("ontouchend" in document)
+			document
+					.write("<script src='assets/js/jquery.mobile.custom.min.js'>"
+							+ "<"+"/script>");
+	</script>
+	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="assets/js/typeahead-bs2.min.js"></script>
+
+	<!-- page specific plugin scripts -->
+
+	<!--[if lte IE 8]>
+		  <script src="assets/js/excanvas.min.js"></script>
+		<![endif]-->
+
+	<script src="assets/js/jquery-ui-1.10.3.custom.min.js"></script>
+	<script src="assets/js/jquery.ui.touch-punch.min.js"></script>
+	<script src="assets/js/chosen.jquery.min.js"></script>
+	<script src="assets/js/fuelux/fuelux.spinner.min.js"></script>
+	<script src="assets/js/date-time/bootstrap-datepicker.min.js"></script>
+	<script src="assets/js/date-time/bootstrap-timepicker.min.js"></script>
+	<script src="assets/js/date-time/daterangepicker.min.js"></script>
+	<script src="assets/js/bootstrap-colorpicker.min.js"></script>
+	<script src="assets/js/jquery.knob.min.js"></script>
+	<script src="assets/js/jquery.autosize.min.js"></script>
+	<script src="assets/js/jquery.inputlimiter.1.3.1.min.js"></script>
+	<script src="assets/js/jquery.maskedinput.min.js"></script>
+	<script src="assets/js/bootstrap-tag.min.js"></script>
+
+
+	<!-- inline scripts related to this page -->
+
+	<script type="text/javascript">
+		jQuery(function($) {
+			$(".chosen-select").chosen();
+		});
+	</script>
+	<script src="assets/js/jquery-1.4.2.js"></script>
+	<script type="text/javascript" src="assets/appjs/xccb.js"></script>
+
+</body>
+
+</html>

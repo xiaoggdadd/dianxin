@@ -1,0 +1,21 @@
+body{font-size:12px;
+SCROLLBAR-HIGHLIGHT-COLOR: #E7E7E7; 
+SCROLLBAR-SHADOW-COLOR: #B9B9B9; 
+SCROLLBAR-3DLIGHT-COLOR: #cdcdcd; 
+SCROLLBAR-ARROW-COLOR:  #E60000; 
+SCROLLBAR-TRACK-COLOR: #E3E3E3; 
+SCROLLBAR-DARKSHADOW-COLOR: #B9B9B9; }
+INPUT {
+BACKGROUND-COLOR: #ffffff; BORDER-BOTTOM: #4f81ca 1px solid; BORDER-LEFT: 
+#4f81ca 1px solid; BORDER-RIGHT: #4f81ca 1px solid; BORDER-TOP: #4f81ca 1px solid; color:#000080;
+}
+form{padding:0;margin:0;border:0}
+p{margin:0px;color:#000000;margin-bottom:0px;margin-top:0px;font-size:12px;}
+a:active {color:#0000ff; text-decoration:none;font-size:12px;}
+a:hover {color:#0000ff; text-decoration: none;font-size:12px;}
+a:link {color: #0000ff; text-decoration: none;font-size:12px;}
+a:visited {color: #0000ff; text-decoration: none;font-size:12px;}
+wcss_class {color: #FF9900; }
+
+.buttonstyle{width:80px; height:24px; color:#fff;box-shadow: 0 0 0 15px #696969 inset;border-style:none;border-radius:5px;font-size:14px;font-weight:bold;font-family:Î¢ÈíÑÅºÚ}
+.buttonstyle:hover{box-shadow: 0 0 0 12px #0B6AFF inset;cursor:pointer;transition:box-shadow 1.5s;}

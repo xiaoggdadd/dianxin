@@ -1,0 +1,3318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
+    http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	<!-- <resource-ref> <res-ref-name> jdbcnews </res-ref-name> <res-type> javax.sql.DataSource 
+		</res-type> <res-auth> Container </res-auth> </resource-ref>
+
+
+<error-page> 
+<exception-type>java.lang.NullPointerException</exception-type> 
+<location>/WebRoot/error.html</location> 
+</error-page>
+
+
+	<filter>
+		<filter-name>Set Character Encoding</filter-name>
+		<filter-class>com.noki.filter.EncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+	
+
+	<filter>
+        <filter-name>xssFilter</filter-name>
+        <filter-class>com.noki.XSSfilter.XssFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>xssFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+	<filter>
+		<filter-name>Set Character Encoding</filter-name>
+		<filter-class>com.noki.filter.EncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+	<filter>
+		<filter-name>SessionFilter</filter-name>
+		<filter-class>com.noki.filter.SessionFilter</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>Set Character Encoding</filter-name>
+		<url-pattern>/web/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>Set Character Encoding</filter-name>
+		<url-pattern>/servlet/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>SessionFilter</filter-name>
+		<url-pattern>/web/*</url-pattern>
+	</filter-mapping> -->
+	
+<error-page>
+<error-code>404</error-code>
+<location>/WebRoot/error.html</location>
+</error-page>
+
+<error-page>
+<error-code>500</error-code>
+<location>/WebRoot/error.html</location>
+</error-page>
+
+<error-page>
+<error-code>505</error-code>
+<location>/WebRoot/error.html</location>
+</error-page>
+
+<error-page> 
+<exception-type>java.lang.NullPointerException</exception-type> 
+<location>/WebRoot/error.html</location> 
+</error-page>
+	<filter>
+		<filter-name>Set Character Encoding</filter-name>
+		<filter-class>com.noki.filter.EncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+	<filter>
+		<filter-name>SessionFilter</filter-name>
+		<filter-class>com.noki.filter.SessionFilter</filter-class>
+	</filter>
+
+	<filter>
+        <filter-name>xssFilter</filter-name>
+        <filter-class>com.noki.XSSfilter.XssFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>xssFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    
+    <filter>
+		<filter-name>loginFilter</filter-name>
+		<filter-class>com.noki.filter.LoginFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>loginFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+    
+	<filter-mapping>
+		<filter-name>Set Character Encoding</filter-name>
+		<url-pattern>/web/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>Set Character Encoding</filter-name>
+		<url-pattern>/servlet/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>SessionFilter</filter-name>
+		<url-pattern>/web/*</url-pattern>
+	</filter-mapping>
+
+	<!-- <listener> <listener-class>com.ptac.app.inter.ftp.NFDFlightDataTaskListener</listener-class> 
+		</listener> <listener> <listener-class>com.noki.mobi.schedule.FromMysqlSchedule</listener-class> 
+		</listener> <listener> <listener-class>com.noki.mobi.schedule.DianLiangSchedule</listener-class> 
+		</listener> -->
+	<listener>
+		<listener-class>com.ptac.app.CurrNum.CurrNum</listener-class>
+	</listener>
+	<!-- OSS账号数据同步监听器 by guoli 20180318-->
+	<listener>
+		<listener-class>com.noki.common.oss.timer.TimerTaskListener</listener-class>
+	</listener>
+
+
+	<servlet>
+		<servlet-name>CShenEnergyCharServlet</servlet-name>
+		<servlet-class>com.noki.felecconsume.servlet.ShenEnergyCharServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ExcelImp</servlet-name>
+		<servlet-class>com.noki.dataedit.servlet.ExcelImp</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>logout</servlet-name>
+		<servlet-class>com.noki.mobi.common.AccountLogoutServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>login</servlet-name>
+		<servlet-class>com.noki.mobi.common.AccountLoginServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>right</servlet-name>
+		<servlet-class>com.noki.mobi.sys.servlet.RightServlet</servlet-class>
+	</servlet>
+	<!--添加流程 start liu	2017-11-27-->
+	<servlet>
+		<servlet-name>flow</servlet-name>
+		<servlet-class>com.noki.mobi.flow.servlet.FlowServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>step</servlet-name>
+		<servlet-class>com.noki.mobi.flow.servlet.StepServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>workflow</servlet-name>
+		<servlet-class>com.noki.mobi.workflow.servlet.WorkFlowServlet</servlet-class>
+	</servlet>
+	<!--添加流程 end liu	 2017-11-7-->
+	<!-- 大工业用电管理 start dc  -->
+	<servlet>
+		<servlet-name>dgyyd</servlet-name>
+		<servlet-class>com.noki.dgyydgl.servlet.DgyydServlet</servlet-class>
+	</servlet>
+	<!-- 大工业用电管理 end dc  -->
+	<servlet>
+		<servlet-name>role</servlet-name>
+		<servlet-class>com.noki.mobi.sys.servlet.RoleServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>account</servlet-name>
+		<servlet-class>com.noki.mobi.sys.servlet.AccountServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ammeterdegree</servlet-name>
+		<servlet-class>com.noki.ammeterdegree.servlet.AmmeterDegreeServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>electricfees</servlet-name>
+		<servlet-class>com.noki.electricfees.servlet.ElectricFeesServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>cbzdpdtestbewritexx</servlet-name>
+		<servlet-class>com.noki.newfunction.servlet.PdTestBewriteServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>downloadyid</servlet-name>
+		<servlet-class>com.noki.dataLoad.servlet.FileUploadServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>daorusuoyou</servlet-name>
+		<servlet-class>com.noki.ammeterdegree.servlet.DaoruServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>daorusuoyou2</servlet-name>
+		<servlet-class>com.noki.ammeterdegree.servlet.DaoruServlet2</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>bargain</servlet-name>
+		<servlet-class>com.noki.electricfees.servlet.BargainServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>ElectricDetail</servlet-name>
+		<servlet-class>com.ptac.app.basisquery.electricdetail.action.ElectricDetailServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>CountUsersServlet</servlet-name>
+		<servlet-class>com.ptac.app.systemmanage.action.CountUsersServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>CountUsersInfoServlet</servlet-name>
+		<servlet-class>com.ptac.app.systemmanage.action.CountUsersInfoServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>QueryPaperBillServlet</servlet-name>
+		<servlet-class>com.ptac.app.print.printpaperbill.action.QueryPaperBillServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>PrintPaperBillServlet</servlet-name>
+		<servlet-class>com.ptac.app.print.printpaperbill.action.PrintPaperBillServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>CountryHeadServlet</servlet-name>
+		<servlet-class>com.ptac.app.checksign.manElectricCheck.action.CountryHeadServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>EnhanceCountryHeadServlet</servlet-name>
+		<servlet-class>com.ptac.app.checksign.manElectricCheck.action.EnhanceCountryHeadServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>CountryHeadActServlet</servlet-name>
+		<servlet-class>com.ptac.app.checksign.manElectricCheck.action.CountryHeadActServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>UnitAveShengServlet</servlet-name>
+		<servlet-class>com.ptac.app.statisticcollect.province.unitAveSheng.action.UnitAveShengServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>UnitAveShiServlet</servlet-name>
+		<servlet-class>com.ptac.app.statisticcollect.city.unitAveShi.action.UnitAveShiServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>CountryElecServlet</servlet-name>
+		<servlet-class>com.ptac.app.checksign.manElectricCheck.action.CountryElecServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>area</servlet-name>
+		<servlet-class>com.noki.mobi.common.LBServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>garea</servlet-name>
+		<servlet-class>com.noki.mobi.common.AreaGradeServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>check</servlet-name>
+		<servlet-class>com.noki.check.servlet.CheckDegreeServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>zhandian</servlet-name>
+		<servlet-class>com.noki.jizhan.ZhanDianServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>dianbiao</servlet-name>
+		<servlet-class>com.noki.jizhan.DianBiaoServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>individual</servlet-name>
+		<servlet-class>com.noki.mobi.sys.servlet.IndividualServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>modifyPass</servlet-name>
+		<servlet-class>com.noki.mobi.sys.servlet.ModifyPassServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>log</servlet-name>
+		<servlet-class>com.noki.mobi.sys.servlet.LogServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>huanbi_sr</servlet-name>
+		<servlet-class>com.noki.mobi.analysis.servlet.HuanbiServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>huanbi_zc</servlet-name>
+		<servlet-class>com.noki.mobi.analysis.servlet.HuanbiServlet_Zc</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>uploaddegree</servlet-name>
+		<servlet-class>com.noki.ammeterdegree.servlet.InputServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>uploadfee</servlet-name>
+		<servlet-class>com.noki.electricfees.servlet.InputServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>uploadprepay</servlet-name>
+		<servlet-class>com.noki.electricfees.servlet.InputPrepayServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>indatadegree</servlet-name>
+		<servlet-class>com.noki.ammeterdegree.servlet.IndataServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>indatafee</servlet-name>
+		<servlet-class>com.noki.electricfees.servlet.IndataServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>indataprepay</servlet-name>
+		<servlet-class>com.noki.electricfees.servlet.IndataPrepayServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>prepayment</servlet-name>
+		<servlet-class>com.noki.electricfees.servlet.PrepaymentServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>deldata</servlet-name>
+		<servlet-class>com.noki.mobi.up.DelData</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>sysset</servlet-name>
+		<servlet-class>com.noki.sysconfig.servlet.SysSetServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>autoaudit</servlet-name>
+		<servlet-class>com.noki.sysconfig.servlet.AutoAuditServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>map_zhanmap</servlet-name>
+		<servlet-class>com.noki.map.servlet.ZhandianMapServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>EnergyServerlet</servlet-name>
+		<servlet-class>com.noki.energy.servlet.EnergyServerlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>GetCityServlet</servlet-name>
+		<servlet-class>com.noki.energy.servlet.GetCityServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>EnergyCharServlet</servlet-name>
+		<servlet-class>com.noki.energy.servlet.EnergyCharServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>DisplayChart</servlet-name>
+		<servlet-class>org.jfree.chart.servlet.DisplayChart</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ShenEnergyServerlet</servlet-name>
+		<servlet-class>com.noki.shenenergy.servlet.ShenEnergyServerlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ShenGetCityServlet</servlet-name>
+		<servlet-class>com.noki.shenenergy.servlet.ShenGetCityServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ShenGetYearServlet</servlet-name>
+		<servlet-class>com.noki.shenenergy.servlet.ShenGetYear</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ShenEnergyCharServlet</servlet-name>
+		<servlet-class>com.noki.shenenergy.servlet.ShenEnergyCharServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>CShenEnergyServerlet</servlet-name>
+		<servlet-class>com.noki.felecconsume.servlet.ShenEnergyServerlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>CShenGetCityServlet</servlet-name>
+		<servlet-class>com.noki.felecconsume.servlet.ShenGetCityServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>CShenGetYearServlet</servlet-name>
+		<servlet-class>com.noki.felecconsume.servlet.ShenGetYear</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>DeleteId</servlet-name>
+		<servlet-class>com.noki.dataedit.servlet.DeleteId</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>InquiryServlet</servlet-name>
+		<servlet-class>com.noki.comm.servlet.InquiryServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>SeachServlet</servlet-name>
+		<servlet-class>com.noki.comm.servlet.SeachServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>huanbi_comparison</servlet-name>
+		<servlet-class>com.noki.query.hnlcomparison.servlet.HbServlet_comparison</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>zhandiandaoru</servlet-name>
+		<servlet-class>com.noki.jizhan.ZhanDianDaoRuServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>InitInquiryServlet</servlet-name>
+		<servlet-class>com.noki.comm.servlet.InitInquiryServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>LocalityDataServlet</servlet-name>
+		<servlet-class>com.noki.sysconfig.servlet.LocalityDataServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>StaticDataServlet</servlet-name>
+		<servlet-class>com.noki.sysconfig.servlet.StaticDataServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>GetListServlet</servlet-name>
+		<servlet-class>com.noki.sysconfig.servlet.GetListServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>GetDateByIdServlet</servlet-name>
+		<servlet-class>com.noki.sysconfig.servlet.GetDateByIdServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>MotifyDateServlet</servlet-name>
+		<servlet-class>com.noki.sysconfig.servlet.MotifyDateServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>delDateServlet</servlet-name>
+		<servlet-class>com.noki.sysconfig.servlet.delDateServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>AddDateServlet</servlet-name>
+		<servlet-class>com.noki.sysconfig.servlet.AddDateServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>GetYearServlet</servlet-name>
+		<servlet-class>com.noki.elecconsume.GetYearServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>GetCityEnerYear</servlet-name>
+		<servlet-class>com.noki.cityelecconsume.servlet.GetCityEnerYear</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>CityEnergyServerlet</servlet-name>
+		<servlet-class>com.noki.cityelecconsume.servlet.CityEnergyServerlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>GetCityEnergyCharServlet</servlet-name>
+		<servlet-class>com.noki.cityelecconsume.servlet.GetEnergyCharServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>GetCityEnerServlet</servlet-name>
+		<servlet-class>com.noki.cityelecconsume.servlet.GetCityEnerServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>GetEnergyCharServlet</servlet-name>
+		<servlet-class>com.noki.stationelecconsume.servlet.GetEnergyCharServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>StationEnergyServerlet</servlet-name>
+		<servlet-class>com.noki.stationelecconsume.servlet.StationEnergyServerlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>GetStationYear</servlet-name>
+		<servlet-class>com.noki.stationelecconsume.servlet.GetStationYear</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>GetStationServlet</servlet-name>
+		<servlet-class>com.noki.stationelecconsume.servlet.GetStationServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>GetElecCharServlet</servlet-name>
+		<servlet-class>com.noki.elecconsume.GetElecCharServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ElecConsumeServerlet</servlet-name>
+		<servlet-class>com.noki.elecconsume.ElecConsumeServerlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>EquipmentmanageServlet</servlet-name>
+		<servlet-class>com.noki.equipmentmanage.EquipmentmanageServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>zangu</servlet-name>
+		<servlet-class>com.noki.function.zangusaveservlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>uploaddegreefee</servlet-name>
+		<servlet-class>com.noki.electricfees.servlet.InputDegreeFeeServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>indatadegreefee</servlet-name>
+		<servlet-class>com.noki.electricfees.servlet.IndataDegreeFeeServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ProFileInfoServlet</servlet-name>
+		<servlet-class>com.noki.proFileInfo.ProFileInfoServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>FileUploadServlet</servlet-name>
+		<servlet-class>com.noki.proFileInfo.FileUploadServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>GetProvinceServlet</servlet-name>
+		<servlet-class>com.noki.elecconsume.GetProvinceServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>syq</servlet-name>
+		<servlet-class>com.noki.syq.SYQServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ProjectinfoServlet</servlet-name>
+		<servlet-class>com.noki.projectinfo.ProjectinfoServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>LuRuLiangServlet</servlet-name>
+		<servlet-class>com.ptac.app.systemmanage.action.LuRuLiangServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>FangWenLiangServlet</servlet-name>
+		<servlet-class>com.ptac.app.systemmanage.action.FangWenLiangServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>CashinfoServlet</servlet-name>
+		<servlet-class>com.noki.cashInfo.CashinfoServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>jtreport</servlet-name>
+		<servlet-class>com.noki.jtreport.servlet.JtReportServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>GroupDataServlet</servlet-name>
+		<servlet-class>com.noki.groupData.GroupDataServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>tabpara</servlet-name>
+		<servlet-class>com.noki.mobi.sys.servlet.JgServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ImportServlet</servlet-name>
+		<servlet-class>com.noki.imports.ImportServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>chart_yflx</servlet-name>
+		<servlet-class>com.noki.mobi.cx.chart.ChartServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>chart_jzdb</servlet-name>
+		<servlet-class>com.noki.mobi.cx.chart.JzdbServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ParticipateinfoServlet</servlet-name>
+		<servlet-class>com.noki.participateinfo.ParticipateinfoServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>fenzu</servlet-name>
+		<servlet-class>com.noki.mobi.sys.servlet.FenzuServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>huanbi_hbanalysis</servlet-name>
+		<servlet-class>com.noki.query.hbanalysisquery.servlet.HuanbiServlet_hbanalysis</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>huanbi_hbpar</servlet-name>
+		<servlet-class>com.noki.query.paranalysis.servlet.HuanbiServlet_par</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>huanbi_nhl</servlet-name>
+		<servlet-class>com.noki.query.tjhzquery.servlet.HuanbiServlet_nhl</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>DepartmentServlet</servlet-name>
+		<servlet-class>com.noki.mobi.sys.servlet.DepartmentServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>FinanceSubject</servlet-name>
+		<servlet-class>com.noki.financemanage.servlet.FinanceSubject</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>Quanchengben</servlet-name>
+		<servlet-class>com.noki.financemanage.servlet.Quanchengben</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>UploadJtReportServlet</servlet-name>
+		<servlet-class>com.noki.jtreport.servlet.UploadJtReportServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>JieNengbiliServlet</servlet-name>
+		<servlet-class>com.noki.query.jcanalysis.javabean.JieNengbiliServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>YongdianpaimingServlet</servlet-name>
+		<servlet-class>com.noki.query.jcanalysis.javabean.YongdianpaimingServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>DaoruServlethtd</servlet-name>
+		<servlet-class>com.noki.daoruelectricfees.servlet.DaoruServlethtd</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>Daoruhtd</servlet-name>
+		<servlet-class>com.noki.daoruelectricfees.servlet.Daoruhtd</servlet-class>
+	</servlet>
+
+
+	<servlet>
+		<servlet-name>ShengjihdlpaimingServlet</servlet-name>
+		<servlet-class>com.noki.query.sortanalysis.javabean.ShengjihdlpaimingServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>JtReportShengServlet</servlet-name>
+		<servlet-class>com.noki.jtreport.servlet.JtReportShengServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>xiazai</servlet-name>
+		<servlet-class>com.noki.jtreport.servlet.JxiazaiServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>cbzdfjxiazai</servlet-name>
+		<servlet-class>com.noki.newfunction.servlet.CbzdfjxiazaiServlet</servlet-class>
+	</servlet>
+	<servlet><!--下载数据库的表格 -->
+		<servlet-name>cbzdfjxiazai2</servlet-name>
+		<servlet-class>com.noki.newfunction.servlet.CbzdfjxiazaiServlet1</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>GuanLiDB_Hdl</servlet-name>
+		<servlet-class>com.noki.query.caijipoint.servlet.GuanLiDB_Hdl</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>GuanLiDBServlet_Hdl</servlet-name>
+		<servlet-class>com.noki.query.caijipoint.servlet.GuanLiDBServlet_Hdl</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>GuanlidbServlet</servlet-name>
+		<servlet-class>com.noki.query.caijipoint.servlet.GuanlidbServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>haodianliangServlet</servlet-name>
+		<servlet-class>com.noki.query.caijipoint.servlet.haodianliangServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>ammeterContrastChartServlert</servlet-name>
+		<servlet-class>com.noki.mobi.cx.chart.ammeterContrastChartServlert</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>DianbiaoCheck</servlet-name>
+		<servlet-class>com.noki.check.servlet.DianbiaoCheck</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>FilesUpload</servlet-name>
+		<servlet-class>com.noki.jtreport.servlet.FilesUpload</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>FilesUploadServlet</servlet-name>
+		<servlet-class>com.noki.jtreport.servlet.FilesUploadServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>FilesDownloadServlet</servlet-name>
+		<servlet-class>com.noki.jtreport.servlet.FilesDownloadServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>ShowFileServlet</servlet-name>
+		<servlet-class>com.noki.jtreport.servlet.ShowFileServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>ShowFileNameServlet</servlet-name>
+		<servlet-class>com.noki.jtreport.servlet.ShowFileNameServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>DaoruElectricfeesServlet</servlet-name>
+		<servlet-class>com.noki.daoruelectricfees.servlet.DaoruElectricfeesServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>DaoruServlet</servlet-name>
+		<servlet-class>com.noki.daoruelectricfees.servlet.DaoruServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>JtReportjz</servlet-name>
+		<servlet-class>com.noki.jtreport.servlet.JtReportjz</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>NewDaoruElectricfeesServlet</servlet-name>
+		<servlet-class>com.noki.daoruelectricfees.servlet.NewDaoruElectricfeesServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>yidDaoruElectricfeesServlet</servlet-name>
+		<servlet-class>com.noki.daoruelectricfees.servlet.yidDaoruElectricfeesServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>zbDaoruElectricfeesServlet</servlet-name>
+		<servlet-class>com.noki.daoruelectricfees.servlet.zbDaoruElectricfeesServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>NewDaoruServlet</servlet-name>
+		<servlet-class>com.noki.daoruelectricfees.servlet.NewDaoruServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>DaoruuZhandiandanjia</servlet-name>
+		<servlet-class>com.noki.daoruelectricfees.servlet.DaoruZhandianDanjia</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>DaoruZhandiandanjiaServlet</servlet-name>
+		<servlet-class>com.noki.daoruelectricfees.servlet.DaoruZhandiandanjiaServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>DaoruZhandianDanjia</servlet-name>
+		<servlet-class>com.noki.daoruelectricfees.servlet.DaoruZhandianDanjia</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>yidDaoruServlet</servlet-name>
+		<servlet-class>com.noki.daoruelectricfees.servlet.yidDaoruServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>zbDaoruServlet</servlet-name>
+		<servlet-class>com.noki.daoruelectricfees.servlet.zbDaoruServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>FinanceSubject1</servlet-name>
+		<servlet-class>com.noki.financemanage.servlet.FinanceSubject1</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>Quanchengben1</servlet-name>
+		<servlet-class>com.noki.financemanage.servlet.Quanchengben1</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>NewHtdServlet</servlet-name>
+		<servlet-class>com.noki.function.NewHtdServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>Yhdl</servlet-name>
+		<servlet-class>com.noki.tongjichaxu.Yhdl</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>MapdqServlet</servlet-name>
+		<servlet-class>com.noki.tongjichaxu.servlet.MapdqServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>MapjzeleServlet</servlet-name>
+		<servlet-class>com.noki.tongjichaxu.servlet.MapjzeleServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>huanbi_zd</servlet-name>
+		<servlet-class>com.noki.mobi.analysis.servlet.HuanzdServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>UploadJtReportServlet1</servlet-name>
+		<servlet-class>com.noki.newfunction.servlet.UploadJtReportServlet1</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>TDServlet</servlet-name>
+		<servlet-class>com.noki.newfunction.servlet.TDServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>PDServlet</servlet-name>
+		<servlet-class>com.noki.newfunction.servlet.PDServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>TuiDanServlet</servlet-name>
+		<servlet-class>com.noki.newfunction.servlet.TuiDanServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>UploadB</servlet-name>
+		<servlet-class>com.noki.newfunction.servlet.UploadB</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>Cbzdsjshenhe</servlet-name>
+		<servlet-class>com.noki.newfunction.servlet.Cbzdsjshenhe</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>Cbzdxiazai</servlet-name>
+		<servlet-class>com.noki.newfunction.servlet.Cbzdxiazai</servlet-class>
+	</servlet>
+
+	<servlet>
+	    <servlet-name>BusinesshallServlet</servlet-name>
+	    <servlet-class>com.ptac.app.businesshall.action.BusinesshallServlet</servlet-class>
+	  </servlet>
+
+
+	<!-- <servlet> <servlet-name>qxfj</servlet-name> <servlet-class>com.noki.newfunction.servlet.qxfj</servlet-class> 
+		</servlet> -->
+	<servlet>
+		<servlet-name>qxfj</servlet-name>
+		<servlet-class>com.noki.newfunction.servlet.UploadDaoQxfjServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>NewExcelImp</servlet-name>
+		<servlet-class>com.noki.dataedit.servlet.NewExcelImp</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>zdqxcxxg</servlet-name>
+		<servlet-class>com.noki.zdqxkz.servlet.ZdqxcxxgServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>ZGsjServlet</servlet-name>
+		<servlet-class>com.noki.newfunction.servlet.ZGsjServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>ScMessage</servlet-name>
+		<servlet-class>com.noki.newfunction.servlet.ScMessage</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>CityFeeCheck</servlet-name>
+		<servlet-class>com.ptac.app.checksign.cityelectricfeecheck.action.CityFeeCheckServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>EnhanceCityFeeCheck</servlet-name>
+		<servlet-class>com.ptac.app.checksign.cityelectricfeecheck.action.EnhanceCityFeeCheckServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>CityFeeCheckStationDetail</servlet-name>
+		<servlet-class>com.ptac.app.checksign.cityelectricfeecheck.action.CityFeeCheckServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ZanGuServlet</servlet-name>
+		<servlet-class>com.ptac.app.financeprovisional.action.ZanGuServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ProMonthEle</servlet-name>
+		<servlet-class>com.ptac.app.calibstat.calendarmonthelec.action.ProMonthElectriServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>DocumentQuery</servlet-name>
+		<servlet-class>com.ptac.app.priceover.documentquery.action.DocumentQueryServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>PriceCriticism</servlet-name>
+		<servlet-class>com.ptac.app.statisticcollect.province.pricecriticism.action.PriceCriticismServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>EleCriticism</servlet-name>
+		<servlet-class>com.ptac.app.statisticcollect.province.electricitycriticism.action.EleCriticismServlet</servlet-class>
+	</servlet>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<servlet-mapping>
+		<servlet-name>EleCriticism</servlet-name>
+		<url-pattern>/servlet/EleCriticism</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>PriceCriticism</servlet-name>
+		<url-pattern>/servlet/PriceCriticism</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>DocumentQuery</servlet-name>
+		<url-pattern>/servlet/DocumentQuery</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ProMonthEle</servlet-name>
+		<url-pattern>/servlet/ProMonthEle</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ZanGuServlet</servlet-name>
+		<url-pattern>/servlet/ZanGuServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>CShenEnergyCharServlet</servlet-name>
+		<url-pattern>/CShenEnergyCharServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CShenEnergyServerlet</servlet-name>
+		<url-pattern>/CShenEnergyServerlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CShenGetCityServlet</servlet-name>
+		<url-pattern>/CShenGetCityServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CShenGetYearServlet</servlet-name>
+		<url-pattern>/CShenGetYearServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>StaticDataServlet</servlet-name>
+		<url-pattern>/servlet/StaticDataServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>GetListServlet</servlet-name>
+		<url-pattern>/servlet/GetListServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>GetDateByIdServlet</servlet-name>
+		<url-pattern>/servlet/GetDateByIdServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>MotifyDateServlet</servlet-name>
+		<url-pattern>/servlet/MotifyDateServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>delDateServlet</servlet-name>
+		<url-pattern>/servlet/delDateServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AddDateServlet</servlet-name>
+		<url-pattern>/servlet/AddDateServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>LocalityDataServlet</servlet-name>
+		<url-pattern>/servlet/LocalityDataServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>InitInquiryServlet</servlet-name>
+		<url-pattern>/servlet/InitInquiryServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zhandiandaoru</servlet-name>
+		<url-pattern>/servlet/zhandiandaoru</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>huanbi_comparison</servlet-name>
+		<url-pattern>/servlet/huanbi_comparison</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>SeachServlet</servlet-name>
+		<url-pattern>/SeachServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>InquiryServlet</servlet-name>
+		<url-pattern>/InquiryServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ShenEnergyServerlet</servlet-name>
+		<url-pattern>/ShenEnergyServerlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ShenGetCityServlet</servlet-name>
+		<url-pattern>/ShenGetCityServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ShenGetYearServlet</servlet-name>
+		<url-pattern>/ShenGetYearServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ShenEnergyCharServlet</servlet-name>
+		<url-pattern>/ShenEnergyCharServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DisplayChart</servlet-name>
+		<url-pattern>/DisplayChart</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>GetCityEnerYear</servlet-name>
+		<url-pattern>/GetCityEnerYear</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>GetCityEnergyCharServlet</servlet-name>
+		<url-pattern>/GetCityEnergyCharServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CityEnergyServerlet</servlet-name>
+		<url-pattern>/CityEnergyServerlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>GetCityEnerServlet</servlet-name>
+		<url-pattern>/GetCityEnerServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>GetEnergyCharServlet</servlet-name>
+		<url-pattern>/GetEnergyCharServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>StationEnergyServerlet</servlet-name>
+		<url-pattern>/StationEnergyServerlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>GetStationYear</servlet-name>
+		<url-pattern>/GetStationYear</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>GetStationServlet</servlet-name>
+		<url-pattern>/GetStationServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>GetYearServlet</servlet-name>
+		<url-pattern>/GetYearServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ElecConsumeServerlet</servlet-name>
+		<url-pattern>/ElecConsumeServerlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>GetElecCharServlet</servlet-name>
+		<url-pattern>/servlet/GetElecCharServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>map_zhanmap</servlet-name>
+		<url-pattern>/servlet/map_zhanmap</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>EnergyServerlet</servlet-name>
+		<url-pattern>/EnergyServerlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>GetCityServlet</servlet-name>
+		<url-pattern>/GetCityServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>EnergyCharServlet</servlet-name>
+		<url-pattern>/EnergyCharServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>EquipmentmanageServlet</servlet-name>
+		<url-pattern>/servlet/EquipmentmanageServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>indatadegreefee</servlet-name>
+		<url-pattern>/servlet/indatadegreefee</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zangu</servlet-name>
+		<url-pattern>/servlet/zangu</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>uploaddegreefee</servlet-name>
+		<url-pattern>/servlet/uploaddegreefee</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>huanbi_zc</servlet-name>
+		<url-pattern>/servlet/huanbi_zc</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>deldata</servlet-name>
+		<url-pattern>/servlet/deldata</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>indatadegree</servlet-name>
+		<url-pattern>/servlet/indatadegree</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>uploaddegree</servlet-name>
+		<url-pattern>/servlet/uploaddegree</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>indatafee</servlet-name>
+		<url-pattern>/servlet/indatafee</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>uploadfee</servlet-name>
+		<url-pattern>/servlet/uploadfee</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ProFileInfoServlet</servlet-name>
+		<url-pattern>/servlet/ProFileInfoServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>FileUploadServlet</servlet-name>
+		<url-pattern>/servlet/FileUploadServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>GetProvinceServlet</servlet-name>
+		<url-pattern>/GetProvinceServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>indataprepay</servlet-name>
+		<url-pattern>/servlet/indataprepay</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>uploadprepay</servlet-name>
+		<url-pattern>/servlet/uploadprepay</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>huanbi_sr</servlet-name>
+		<url-pattern>/servlet/huanbi_sr</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>prepayment</servlet-name>
+		<url-pattern>/servlet/prepayment</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>syq</servlet-name>
+		<url-pattern>/servlet/syq</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>logout</servlet-name>
+		<url-pattern>/servlet/logout</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>login</servlet-name>
+		<url-pattern>/servlet/login</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>right</servlet-name>
+		<url-pattern>/servlet/right</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>role</servlet-name>
+		<url-pattern>/servlet/role</url-pattern>
+	</servlet-mapping>
+	<!--添加流程 start liu	2017-11-27-->
+	<servlet-mapping>
+		<servlet-name>flow</servlet-name>
+		<url-pattern>/servlet/flow</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>step</servlet-name>
+		<url-pattern>/servlet/step</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>workflow</servlet-name>
+		<url-pattern>/servlet/workflow</url-pattern>
+	</servlet-mapping>
+	<!--添加流程 end liu	2017-11-27-->
+	<!-- 大工业用电管理 start dc  -->
+	<servlet-mapping>
+		<servlet-name>dgyyd</servlet-name>
+		<url-pattern>/servlet/dgyyd</url-pattern>
+	</servlet-mapping>
+	<!-- 大工业用电管理 end dc  -->
+	<servlet-mapping>
+		<servlet-name>account</servlet-name>
+		<url-pattern>/servlet/account</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ammeterdegree</servlet-name>
+		<url-pattern>/servlet/ammeterdegree</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>electricfees</servlet-name>
+		<url-pattern>/servlet/electricfees</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zdqxcxxg</servlet-name>
+		<url-pattern>/servlet/zdqxcxxg</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>cbzdpdtestbewritexx</servlet-name>
+		<url-pattern>/servlet/cbzdpdtestbewritexx</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>downloadyid</servlet-name>
+		<url-pattern>/servlet/downloadyid</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>daorusuoyou</servlet-name>
+		<url-pattern>/servlet/daorusuoyou</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>daorusuoyou2</servlet-name>
+		<url-pattern>/servlet/daorusuoyou2</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>bargain</servlet-name>
+		<url-pattern>/servlet/bargain</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>area</servlet-name>
+		<url-pattern>/servlet/area</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>garea</servlet-name>
+		<url-pattern>/servlet/garea</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>check</servlet-name>
+		<url-pattern>/servlet/check</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zhandian</servlet-name>
+		<url-pattern>/servlet/zhandian</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>dianbiao</servlet-name>
+		<url-pattern>/servlet/dianbiao</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>individual</servlet-name>
+		<url-pattern>/servlet/individual</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>modifyPass</servlet-name>
+		<url-pattern>/servlet/modifyPass</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>log</servlet-name>
+		<url-pattern>/servlet/log</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>sysset</servlet-name>
+		<url-pattern>/servlet/sysset</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>autoaudit</servlet-name>
+		<url-pattern>/servlet/autoaudit</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ProjectinfoServlet</servlet-name>
+		<url-pattern>/servlet/ProjectinfoServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CashinfoServlet</servlet-name>
+		<url-pattern>/servlet/CashinfoServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>jtreport</servlet-name>
+		<url-pattern>/servlet/jtreport</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>GroupDataServlet</servlet-name>
+		<url-pattern>/servlet/GroupDataServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>tabpara</servlet-name>
+		<url-pattern>/servlet/tabpara</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ImportServlet</servlet-name>
+		<url-pattern>/servlet/ImportServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>chart_jzdb</servlet-name>
+		<url-pattern>/servlet/chart_jzdb</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>chart_yflx</servlet-name>
+		<url-pattern>/servlet/chart_yflx</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ParticipateinfoServlet</servlet-name>
+		<url-pattern>/servlet/ParticipateinfoServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>fenzu</servlet-name>
+		<url-pattern>/servlet/fenzu</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>huanbi_hbanalysis</servlet-name>
+		<url-pattern>/servlet/huanbi_hbanalysis</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>huanbi_hbpar</servlet-name>
+		<url-pattern>/servlet/huanbi_hbpar</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>huanbi_nhl</servlet-name>
+		<url-pattern>/servlet/huanbi_nhl</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DepartmentServlet</servlet-name>
+		<url-pattern>/servlet/DepartmentServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>FinanceSubject</servlet-name>
+		<url-pattern>/servlet/FinanceSubject</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Quanchengben</servlet-name>
+		<url-pattern>/servlet/Quanchengben</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UploadJtReportServlet</servlet-name>
+		<url-pattern>/UploadJtReportServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>JieNengbiliServlet</servlet-name>
+		<url-pattern>/servlet/JieNengbiliServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>YongdianpaimingServlet</servlet-name>
+		<url-pattern>/servlet/YongdianpaimingServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ShengjihdlpaimingServlet</servlet-name>
+		<url-pattern>/servlet/ShengjihdlpaimingServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>JtReportShengServlet</servlet-name>
+		<url-pattern>/servlet/JtReportShengServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>GuanLiDB_Hdl</servlet-name>
+		<url-pattern>/servlet/GuanLiDB_Hdl</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>GuanLiDBServlet_Hdl</servlet-name>
+		<url-pattern>/servlet/GuanLiDBServlet_Hdl</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>GuanlidbServlet</servlet-name>
+		<url-pattern>/servlet/GuanlidbServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>haodianliangServlet</servlet-name>
+		<url-pattern>/servlet/haodianliangServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ammeterContrastChartServlert</servlet-name>
+		<url-pattern>/servlet/ammeterContrastChartServlert</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DianbiaoCheck</servlet-name>
+		<url-pattern>/servlet/DianbiaoCheck</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>FilesUpload</servlet-name>
+		<url-pattern>/servlet/FilesUpload</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>FilesUploadServlet</servlet-name>
+		<url-pattern>/servlet/FilesUploadServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>CountryHeadServlet</servlet-name>
+		<url-pattern>/servlet/CountryHeadServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>EnhanceCountryHeadServlet</servlet-name>
+		<url-pattern>/servlet/EnhanceCountryHeadServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CountryHeadActServlet</servlet-name>
+		<url-pattern>/servlet/CountryHeadActServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UnitAveShengServlet</servlet-name>
+		<url-pattern>/servlet/UnitAveShengServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UnitAveShiServlet</servlet-name>
+		<url-pattern>/servlet/UnitAveShiServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>CountryElecServlet</servlet-name>
+		<url-pattern>/servlet/CountryElecServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>FilesDownloadServlet</servlet-name>
+		<url-pattern>/servlet/FilesDownloadServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ShowFileServlet</servlet-name>
+		<url-pattern>/servlet/ShowFileServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ShowFileNameServlet</servlet-name>
+		<url-pattern>/servlet/ShowFileNameServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DaoruElectricfeesServlet</servlet-name>
+		<url-pattern>/servlet/DaoruElectricfeesServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DaoruServlethtd</servlet-name>
+		<url-pattern>/servlet/DaoruServlethtd</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Daoruhtd</servlet-name>
+		<url-pattern>/servlet/Daoruhtd</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DaoruServlet</servlet-name>
+		<url-pattern>/servlet/DaoruServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>JtReportjz</servlet-name>
+		<url-pattern>/servlet/JtReportjz</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>NewDaoruElectricfeesServlet</servlet-name>
+		<url-pattern>/servlet/NewDaoruElectricfeesServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>yidDaoruElectricfeesServlet</servlet-name>
+		<url-pattern>/servlet/yidDaoruElectricfeesServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zbDaoruElectricfeesServlet</servlet-name>
+		<url-pattern>/servlet/zbDaoruElectricfeesServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>NewDaoruServlet</servlet-name>
+		<url-pattern>/servlet/NewDaoruServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>yidDaoruServlet</servlet-name>
+		<url-pattern>/servlet/yidDaoruServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zbDaoruServlet</servlet-name>
+		<url-pattern>/servlet/zbDaoruServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>DaoruZhandiandanjiaServlet</servlet-name>
+		<url-pattern>/servlet/DaoruZhandiandanjiaServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DaoruZhandianDanjia</servlet-name>
+		<url-pattern>/servlet/DaoruZhandianDanjia</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DaoruuZhandiandanjia</servlet-name>
+		<url-pattern>/servlet/DaoruuZhandiandanjia</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>FinanceSubject1</servlet-name>
+		<url-pattern>/servlet/FinanceSubject1</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Quanchengben1</servlet-name>
+		<url-pattern>/servlet/Quanchengben1</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>NewHtdServlet</servlet-name>
+		<url-pattern>/servlet/NewHtdServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>Yhdl</servlet-name>
+		<url-pattern>/servlet/Yhdl</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>MapdqServlet</servlet-name>
+		<url-pattern>/servlet/MapdqServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>MapjzeleServlet</servlet-name>
+		<url-pattern>/servlet/MapjzeleServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>huanbi_zd</servlet-name>
+		<url-pattern>/servlet/huanbi_zd</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>xiazai</servlet-name>
+		<url-pattern>/servlet/xiazai</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>ElectricDetail</servlet-name>
+		<url-pattern>/servlet/ElectricDetail</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>CountUsersServlet</servlet-name>
+		<url-pattern>/servlet/CountUsersServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CountUsersInfoServlet</servlet-name>
+		<url-pattern>/servlet/CountUsersInfoServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>QueryPaperBillServlet</servlet-name>
+		<url-pattern>/servlet/QueryPaperBillServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>PrintPaperBillServlet</servlet-name>
+		<url-pattern>/servlet/PrintPaperBillServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>cbzdfjxiazai</servlet-name>
+		<url-pattern>/servlet/cbzdfjxiazai</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>cbzdfjxiazai2</servlet-name><!--下载数据库里的表格 -->
+		<url-pattern>/servlet/cbzdfjxiazai2</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>UploadJtReportServlet1</servlet-name>
+		<url-pattern>/servlet/UploadJtReportServlet1</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>Cbzdsjshenhe</servlet-name>
+		<url-pattern>/servlet/Cbzdsjshenhe</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Cbzdxiazai</servlet-name>
+		<url-pattern>/servlet/Cbzdxiazai</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>TDServlet</servlet-name>
+		<url-pattern>/servlet/TDServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>PDServlet</servlet-name>
+		<url-pattern>/servlet/PDServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>TuiDanServlet</servlet-name>
+		<url-pattern>/servlet/TuiDanServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UploadB</servlet-name>
+		<url-pattern>/UploadB</url-pattern>
+	</servlet-mapping>
+
+	 <servlet-mapping>
+	    <servlet-name>BusinesshallServlet</servlet-name>
+	    <url-pattern>/servlet/businesshallServlet</url-pattern>
+	  </servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>qxfj</servlet-name>
+		<url-pattern>/servlet/qxfj</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>NewExcelImp</servlet-name>
+		<url-pattern>/servlet/NewExcelImp</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>ExcelImp</servlet-name>
+		<url-pattern>/servlet/ExcelImp</url-pattern>
+	</servlet-mapping>
+
+
+
+
+	<!--项目默认的初始页面.本页面只是包含了浏览器最大化的方法，然后跳转到index.jsp页面 -->
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+	<error-page>
+		<error-code>404</error-code>
+		<location>/error.html</location>
+	</error-page>
+
+	<jsp-config>
+		<taglib>
+			<taglib-uri>/pagetag</taglib-uri>
+			<taglib-location>/WEB-INF/taglib/pagetag.tld</taglib-location>
+		</taglib>
+	</jsp-config>
+
+	<resource-ref>
+		<description>Oracle Datasource example</description>
+		<res-ref-name>jdbc/myoracle</res-ref-name>
+		<res-type>javax.sql.DataSource</res-type>
+		<res-auth>Container</res-auth>
+	</resource-ref>
+
+	<servlet>
+		<servlet-name>dwr-invoker</servlet-name>
+		<servlet-class>uk.ltd.getahead.dwr.DWRServlet</servlet-class>
+		<init-param>
+			<param-name>debug</param-name>
+			<param-value>true</param-value>
+		</init-param>
+		<init-param>
+			<param-name>scriptCompressed</param-name>
+			<param-value>false</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>fybzglServlet</servlet-name>
+		<servlet-class>com.noki.fybzgl.fybzglServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>zdyzhandianServlet</servlet-name>
+		<servlet-class>com.noki.zdymess.zdyzhandianServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ShenHe</servlet-name>
+		<servlet-class>com.noki.zdqxkz.servlet.ShenHe</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>KtxsServlet</servlet-name>
+		<servlet-class>com.noki.newfunction.servlet.KtxsServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>JyjfServlet</servlet-name>
+		<servlet-class>com.noki.dataedit.servlet.JyjfServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>NewJyjfImp</servlet-name>
+		<servlet-class>com.noki.dataedit.servlet.NewJyjfImp</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ShengjzgSh</servlet-name>
+		<servlet-class>com.noki.newfunction.servlet.ShengjzgSh</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>ElecBillServlet</servlet-name>
+		<servlet-class>com.ptac.app.electricmanage.electricitybill.action.ElecBillServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>EnhanceElecBillServlet</servlet-name>
+		<servlet-class>com.ptac.app.electricmanage.enhanceelectricitybill.action.ElecBillServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>FinanceSelectServlet</servlet-name>
+		<servlet-class>com.ptac.app.checksign.financecheck.action.FinanceSelectServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>FinanceCheckServlet</servlet-name>
+		<servlet-class>com.ptac.app.checksign.financecheck.action.FinanceCheckServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>FinanceDaochuServlet</servlet-name>
+		<servlet-class>com.ptac.app.checksign.financecheck.action.FinanceDaochuServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>UpXslTool</servlet-name>
+		<servlet-class>com.ptac.app.electricmanage.input.servlet.UpXslTool</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>UpXlsElectricBill</servlet-name>
+		<servlet-class>com.ptac.app.electricmanage.input.servlet.UpXlsElectricBill</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>UpXlsEnhanceElectricBill</servlet-name>
+		<servlet-class>com.ptac.app.electricmanage.input.servlet.UpXlsEnhanceElectricBill</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>testJdbc</servlet-name>
+		<servlet-class>com.ptac.app.util.testJdbc</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>UpXlsBillObserve</servlet-name>
+		<servlet-class>com.ptac.app.electricmanage.input.servlet.UpXlsBillObserve</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>testjdbc</servlet-name>
+		<servlet-class>com.atnt.testjdbc</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ElecModifyServlet</servlet-name>
+		<servlet-class>com.ptac.app.electricmanage.electricitybill.action.ElecModifyServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>EnhanceElecModifyServlet</servlet-name>
+		<servlet-class>com.ptac.app.electricmanage.enhanceelectricitybill.action.ElecModifyServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>ElecQueryServlet</servlet-name>
+		<servlet-class>com.ptac.app.electricmanage.electricitybill.action.ElecQueryServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>EnhanceElecQueryServlet</servlet-name>
+		<servlet-class>com.ptac.app.electricmanage.enhanceelectricitybill.action.ElecQueryServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>XlsFileUploadServlet</servlet-name>
+		<servlet-class>com.ptac.app.inportuserzibaodian.action.XlsFileUploadServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>CityNewAddSiteQuantityServlet</servlet-name>
+		<servlet-class>com.ptac.app.statisticcollect.city.addsitequantity.action.CityNewAddSiteQuantityServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ProvinceNewAddSiteQuantityServlet</servlet-name>
+		<servlet-class>com.ptac.app.statisticcollect.province.addsitequantity.action.ProvinceNewAddSiteQuantityServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ModifyUnitPriceServlet</servlet-name>
+		<servlet-class>com.ptac.app.statisticcollect.city.modifyunitprice.action.ModifyUnitPriceServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ProvinceModifyUnitPriceServlet</servlet-name>
+		<servlet-class>com.ptac.app.statisticcollect.province.modifyunitprice.action.ProvinceModifyUnitPriceServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>UserZibaodianAjaxServlet</servlet-name>
+		<servlet-class>com.ptac.app.inportuserzibaodian.action.UserZibaodianAjaxServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>CityMngCheckServlet</servlet-name>
+		<servlet-class>com.ptac.app.checksign.citymanagercheck.action.CityMngCheckServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>BargainBillSelectServlet</servlet-name>
+		<servlet-class>com.ptac.app.electricmanage.bargainbill.action.BargainBillSelectServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>AddBargainServlet</servlet-name>
+		<servlet-class>com.ptac.app.electricmanage.bargainbill.action.AddBargainServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>DropBargainBillServlet</servlet-name>
+		<servlet-class>com.ptac.app.electricmanage.bargainbill.action.DropBargainBillServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>UpdateBargainBillServlet</servlet-name>
+		<servlet-class>com.ptac.app.electricmanage.bargainbill.action.UpdateBargainBillServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>BargainBillInputServlet</servlet-name>
+		<servlet-class>com.ptac.app.electricmanage.bargainbill.action.BargainBillInputServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>TempletDownLoadServlet</servlet-name>
+		<servlet-class>com.ptac.app.chinamobile.action.TempletDownLoadServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>CMCCUpXlsBillServlet</servlet-name>
+		<servlet-class>com.ptac.app.chinamobile.action.CMCCUpXlsBillServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>GdfsServlet</servlet-name>
+		<servlet-class>com.ptac.app.tjhz.action.GdfsServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>CityUnitpriceServlet</servlet-name>
+		<servlet-class>com.ptac.app.statisticcollect.city.unitpricePIC.action.CityUnitpriceServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>CityUnitpriceDaoChuServlet</servlet-name>
+		<servlet-class>com.ptac.app.statisticcollect.city.unitpricePIC.action.CityUnitpriceDaoChuServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>ProUnitpriceServlet</servlet-name>
+		<servlet-class>com.ptac.app.statisticcollect.province.unitpricePIC.action.ProUnitpriceServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>ProUnitpriceDaoChuServlet</servlet-name>
+		<servlet-class>com.ptac.app.statisticcollect.province.unitpricePIC.action.ProUnitpriceDaoChuServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>ProPicServlet</servlet-name>
+		<servlet-class>com.ptac.app.statisticcollect.province.unitpricePIC.action.ProPicServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>CityPICServlet</servlet-name>
+		<servlet-class>com.ptac.app.statisticcollect.city.unitpricePIC.action.CityPICServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>SiteDetailCountServlet</servlet-name>
+		<servlet-class>com.ptac.app.statisticcollect.province.sitedetailcount.action.SiteDetailCountServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>ReadingRateSelectServlet</servlet-name>
+		<servlet-class>com.ptac.app.statisticcollect.city.readingrate.action.ReadingRateSelectServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>ReadingRateOutputServlet</servlet-name>
+		<servlet-class>com.ptac.app.statisticcollect.city.readingrate.action.ReadingRateOutputServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>CitySiteDetailCountServlet</servlet-name>
+		<servlet-class>com.ptac.app.statisticcollect.city.sitedetailcount.action.CitySiteDetailCountServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ElecQuantityManage</servlet-name>
+		<servlet-class>com.ptac.app.elecquantitymanage.elecquantitylist.input.action.UpXlsElecQuantity</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>EstimateContrastServlet</servlet-name>
+		<servlet-class>com.ptac.app.statisticcollect.province.estimatecontrast.action.EstimateContrastServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>ContractBillServlet</servlet-name>
+		<servlet-class>com.ptac.app.basisquery.contractbill.action.ContractBillServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>NewsServlet</servlet-name>
+		<servlet-class>com.ptac.app.news.action.NewsServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>LiuChengInfo</servlet-name>
+		<servlet-class>com.ptac.app.basisquery.liucheng.action.LiuChengInfo</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>EnhanceEleConfigurationServlet</servlet-name>
+		<servlet-class>com.ptac.app.systemconfiguration.EnhanceEleConfig.action.EnhanceEleConfigurationServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>LeaseBill</servlet-name>
+		<servlet-class>com.ptac.app.lease.query.action.LeaseBill</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>LeaseBillServlet</servlet-name>
+		<servlet-class>com.ptac.app.lease.query.action.LeaseBillServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>LeaseAuditServlet</servlet-name>
+		<servlet-class>com.ptac.app.lease.audit.action.LeaseAuditServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>LeaseAudit</servlet-name>
+		<servlet-class>com.ptac.app.lease.audit.action.LeaseAudit</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>LeaseBargainFeesServlet</servlet-name>
+		<servlet-class>com.ptac.app.lease.query.action.LeaseBargainFeesServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>LeaseFeesQueryServlet</servlet-name>
+		<servlet-class>com.ptac.app.lease.query.action.LeaseFeesQueryServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>StationInputServlet</servlet-name>
+		<servlet-class>com.ptac.app.sitemanage.stationmanage.action.StationInputServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>LeaseFeesCountryAuditServlet</servlet-name>
+		<servlet-class>com.ptac.app.lease.audit.action.LeaseFeesCountryAuditServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>LeaseFeesCityAuditServlet</servlet-name>
+		<servlet-class>com.ptac.app.lease.audit.action.LeaseFeesCityAuditServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>LeaseStatServlet</servlet-name>
+		<servlet-class>com.ptac.app.lease.statistical.action.LeaseStatServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>LeaseWarnServlet</servlet-name>
+		<servlet-class>com.ptac.app.lease.statistical.action.LeaseWarnServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>DetailServlet</servlet-name>
+		<servlet-class>com.ptac.app.calibstat.action.DetailServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>SingleSiteServlet</servlet-name>
+		<servlet-class>com.ptac.app.calibstat.action.SingleSiteServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>OverSiteServlet</servlet-name>
+		<servlet-class>com.ptac.app.calibstat.action.OverSiteServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>calibrationServerlet</servlet-name>
+		<servlet-class>com.ptac.app.autocalibration.calibrationServerlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ElecBills</servlet-name>
+		<servlet-class>com.ptac.app.datastatistics.electricitybills.action.ElecBills</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>PowerServlet</servlet-name>
+		<servlet-class>com.ptac.app.datastatistics.powermode.action.PowerServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>MonShareServlet</servlet-name>
+		<servlet-class>com.ptac.app.datastatistics.monitoringshare.action.MonShareServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>MoveFixedElecServlet</servlet-name>
+		<servlet-class>com.ptac.app.calibstat.movefixedelec.action.MoveFixedElecServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>HuoPiaoLvServlet</servlet-name>
+		<servlet-class>com.ptac.app.calibstat.huopiaolv.action.HuoPiaoLvServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ProvServlet</servlet-name>
+		<servlet-class>com.ptac.app.calibstat.provincesiteanalysis.action.ProvServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>CityServlet</servlet-name>
+		<servlet-class>com.ptac.app.calibstat.citysiteanalysis.action.CityServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ComparedServlet</servlet-name>
+		<servlet-class>com.ptac.app.calibstat.compared.action.ComparedServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>getMessageAction</servlet-name>
+		<servlet-class>com.ptac.app.inter.action.getMessageAction</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>DbStationManageServlet</servlet-name>
+		<servlet-class>com.ptac.app.sitemanage.dbstationmanage.action.DbStationManageServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>DateRepeatServlet</servlet-name>
+		<servlet-class>com.ptac.app.calibstat.daterepeat.action.DateRepeatServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>SiteEveryClose</servlet-name>
+		<servlet-class>com.ptac.app.collectanalysis.siteeveryclose.action.SiteEveryClose</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>OneSiteDbServlet</servlet-name>
+		<servlet-class>com.ptac.app.collectanalysis.onesitedb.action.OneSiteDbServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>OneSiteDbShiServlet</servlet-name>
+		<servlet-class>com.ptac.app.collectanalysis.onesitedbshi.action.OneSiteDbShiServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>CityRelationServlet</servlet-name>
+		<servlet-class>com.ptac.app.relationquery.action.CityRelationServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>TownRelationServlet</servlet-name>
+		<servlet-class>com.ptac.app.relationquery.action.TownRelationServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>zdcountconfigServlet</servlet-name>
+		<servlet-class>com.ptac.app.systemconfiguration.zdcountconfig.action.zdcountconfigServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>PieChartServlet</servlet-name>
+		<servlet-class>com.ptac.app.noadvicescb.piechart.PieChartServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>ProvCheckServlet</servlet-name>
+		<servlet-class>com.ptac.app.checksign.provincecheck.action.ProvCheckServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>CountyVerifyServlet</servlet-name>
+		<servlet-class>com.ptac.app.checkstandard.countyverify.action.CountyVerifyServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ProvSendServlet</servlet-name>
+		<servlet-class>com.ptac.app.priceover.provincesend.action.ProvSendServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>CitySendServlet</servlet-name>
+		<servlet-class>com.ptac.app.priceover.citysend.action.CitySendServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>CityCheckServlet</servlet-name>
+		<servlet-class>com.ptac.app.priceover.citycheck.action.CityCheckServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>CountySignCheckServlet</servlet-name>
+		<servlet-class>com.ptac.app.priceover.countysigncheck.action.CountySignCheckServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>DownLoadAction</servlet-name>
+		<servlet-class>com.ptac.app.priceover.countysigncheck.action.DownLoadAction</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ProAuditingServlet</servlet-name>
+		<servlet-class>com.ptac.app.priceover.provinceauditing.action.ProAuditingServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ProvinceSendServlet</servlet-name>
+		<servlet-class>com.ptac.app.checkstandard.provincesend.action.ProvinceSendServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>QyztServlet</servlet-name>
+		<servlet-class>com.ptac.app.provinceapply.qyzt.action.QyztServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>DownloadServlet</servlet-name>
+		<servlet-class>com.ptac.app.provinceapply.qyzt.action.DownloadServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>GbsqServlet</servlet-name>
+		<servlet-class>com.ptac.app.provinceapply.gbsq.action.GbsqServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>GdfServlet</servlet-name>
+		<servlet-class>com.ptac.app.provinceapply.gdfs.action.GdfServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>AccountWithoutServlet</servlet-name>
+		<servlet-class>com.ptac.app.statisticcollect.province.accountwithout.action.AccountWithoutServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>OverPowerServlet</servlet-name>
+		<servlet-class>com.ptac.app.statisticcollect.province.overpowerbulletin.action.OverPowerServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>AvgPriceServlet</servlet-name>
+		<servlet-class>com.ptac.app.statisticcollect.province.avgpricebulletin.action.AvgPriceServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ElecfeesAnalyseServlet</servlet-name>
+		<servlet-class>com.ptac.app.statisticcollect.province.elecfeesanalyse.action.ElecfeesAnalyseServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ElectricAnalyseServlet</servlet-name>
+		<servlet-class>com.ptac.app.statisticcollect.province.electricanalyse.action.ElectricAnalyseServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>GdfsElecBulletinServlet</servlet-name>
+		<servlet-class>com.ptac.app.statisticcollect.province.gdfselecbulletin.action.GdfsElecBulletinServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>LiuchServlet</servlet-name>
+		<servlet-class>com.ptac.app.electricmanage.liuchenghaobill.action.LiuchServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ElecfeesAnalyseServlet2</servlet-name>
+		<servlet-class>com.ptac.app.statisticcollect.city.elecfeesanalyse.action.ElecfeesAnalyseServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ElectricAnalyseServlet2</servlet-name>
+		<servlet-class>com.ptac.app.statisticcollect.city.electricanalyse.action.ElectricAnalyseServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>GdfsElecBulletinServlet2</servlet-name>
+		<servlet-class>com.ptac.app.statisticcollect.city.gdfselecbulletin.action.GdfsElecBulletinServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ZwhdModelUpload</servlet-name>
+		<servlet-class>com.noki.zwhd.servlet.ZwhdModelUpload</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>WydfftUpload</servlet-name>
+		<servlet-class>com.noki.zwhd.servlet.WydfftUpload</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>CwybxUpload</servlet-name>
+		<servlet-class>com.noki.zwhd.servlet.CwybxUpload</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ExcelModelDownload</servlet-name>
+		<servlet-class>com.noki.zwhd.servlet.ExcelModelDownload</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>CwybxWydfftHd</servlet-name>
+		<servlet-class>com.noki.zwhd.servlet.CwybxWydfftHd</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>WydfftAdd</servlet-name>
+		<servlet-class>com.noki.zwhd.servlet.WydfftAdd</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>WydfftUpdate</servlet-name>
+		<servlet-class>com.noki.zwhd.servlet.WydfftUpdate</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>SjdfftqrUpdate</servlet-name>
+		<servlet-class>com.noki.zwhd.servlet.SjdfftqrUpdate</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>DxdfftqrAdd</servlet-name>
+		<servlet-class>com.noki.zwhd.servlet.DxdfftqrAdd</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>Dxdfftfx</servlet-name>
+		<servlet-class>com.noki.bgfenxi.servlet.DxdfftfxServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>DFDLservlet</servlet-name>
+		<servlet-class>com.noki.dldfgl.DFDLservlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>WydfftDownload</servlet-name>
+		<servlet-class>com.noki.zwhd.servlet.WydfftDownload</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>CwybxDownload</servlet-name>
+		<servlet-class>com.noki.zwhd.servlet.CwybxDownload</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>WydfftDelete</servlet-name>
+		<servlet-class>com.noki.zwhd.servlet.WydfftDelete</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>CwybxDelete</servlet-name>
+		<servlet-class>com.noki.zwhd.servlet.CwybxDelete</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>QxWydfftUpdate</servlet-name>
+		<servlet-class>com.noki.zwhd.servlet.QxWydfftUpdate</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>CwybxUpdate</servlet-name>
+		<servlet-class>com.noki.zwhd.servlet.CwybxUpdate</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>CwybxAdd</servlet-name>
+		<servlet-class>com.noki.zwhd.servlet.CwybxAdd</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>SjdfftqrDownload</servlet-name>
+		<servlet-class>com.noki.zwhd.servlet.SjdfftqrDownload</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>QxdfftqrDownload</servlet-name>
+		<servlet-class>com.noki.zwhd.servlet.QxdfftqrDownload</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>LtdfftqrAdd</servlet-name>
+		<servlet-class>com.noki.zwhd.servlet.LtdfftqrAdd</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>YddfftqrAdd</servlet-name>
+		<servlet-class>com.noki.zwhd.servlet.YddfftqrAdd</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>LtdfftDownload</servlet-name>
+		<servlet-class>com.noki.zwhd.servlet.LtdfftDownload</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>DxdfftDownload</servlet-name>
+		<servlet-class>com.noki.zwhd.servlet.DxdfftDownload</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>DxdfftfxDownload</servlet-name>
+		<servlet-class>com.noki.bgfenxi.servlet.DxdfftfxDownload</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>DxdfftresultDownload</servlet-name>
+		<servlet-class>com.noki.bgfenxi.servlet.DxdfftresultDownload</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>LtdfftUpload</servlet-name>
+		<servlet-class>com.noki.zwhd.servlet.LtdfftUpload</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>DxdfftUpload</servlet-name>
+		<servlet-class>com.noki.zwhd.servlet.DxdfftUpload</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>DxdfftfxUpload</servlet-name>
+		<servlet-class>com.noki.bgfenxi.servlet.DxdfftfxUpload</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>SjyddfftDownload</servlet-name>
+		<servlet-class>com.noki.zwhd.servlet.SjyddfftDownload</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>LtdfftDownloadForWxg</servlet-name>
+		<servlet-class>com.noki.zwhd.servlet.LtdfftDownloadForWxg</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>DxdfftDownloadForWxg</servlet-name>
+		<servlet-class>com.noki.zwhd.servlet.DxdfftDownloadForWxg</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>DxdfftfxDownloadForWxg</servlet-name>
+		<servlet-class>com.noki.bgfenxi.servlet.DxdfftfxDownloadForWxg</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>YddfftUpload</servlet-name>
+		<servlet-class>com.noki.zwhd.servlet.YddfftUpload</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>YddfftDownload</servlet-name>
+		<servlet-class>com.noki.zwhd.servlet.YddfftDownload</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>LtdfftqrUpdate</servlet-name>
+		<servlet-class>com.noki.zwhd.servlet.LtdfftqrUpdate</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>CBUserServlet</servlet-name>
+		<servlet-class>com.noki.biaogan.servlet.CBUserServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>CBUserSendMessageServlet</servlet-name>
+		<servlet-class>com.noki.biaogan.servlet.CBUserSendMessageServlet</servlet-class>
+	</servlet>
+	<servlet>
+
+		<servlet-name>Cbyuanservlet</servlet-name>
+		<servlet-class>com.noki.jichuInfo.Cbyuanservlet</servlet-class>
+	</servlet>
+	<servlet>
+
+		<servlet-name>Cbjihuaservlet</servlet-name>
+		<servlet-class>com.noki.jichuInfo.Cbjihuaservlet</servlet-class>
+	</servlet>
+	<servlet>
+
+		<servlet-name>FtblServlet</servlet-name>
+		<servlet-class>com.noki.jichuInfo.FtblServlet</servlet-class>
+	</servlet>
+	<servlet>
+
+		<servlet-name>SfyzServlet</servlet-name>
+		<servlet-class>com.noki.jichuInfo.SfyzServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>BiaoganServlet</servlet-name>
+		<servlet-class>com.noki.biaogan.servlet.BiaoganServlet</servlet-class>
+	</servlet>
+	<servlet>
+
+		<servlet-name>DianjiaServlet</servlet-name>
+		<servlet-class>com.noki.jichuInfo.DianjiaServlet</servlet-class>
+	</servlet>
+	<servlet>
+
+		<servlet-name>DianliangFenxiServlet</servlet-name>
+		<servlet-class>com.noki.jichuInfo.DianliangFenxiServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>DianliangDownload</servlet-name>
+		<servlet-class>com.noki.dianliang.servlet.DianliangDownload</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>DianliangUpload</servlet-name>
+		<servlet-class>com.noki.dianliang.servlet.DianliangUpload</servlet-class>
+	</servlet>
+
+	<servlet>
+
+		<servlet-name>DianfeiFenxiServlet</servlet-name>
+		<servlet-class>com.noki.dianfei.DianfeiFenxiServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>BiaoganDownload</servlet-name>
+		<servlet-class>com.noki.biaogan.servlet.BiaoganDownload</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ExcelDownload</servlet-name>
+		<servlet-class>com.noki.biaogan.servlet.ExcelDownload</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>DianliangExcelDownload</servlet-name>
+		<servlet-class>com.noki.dianliang.servlet.DianliangExcelDownload</servlet-class>
+	</servlet>
+	<servlet>
+
+		<servlet-name>CbDownload</servlet-name>
+		<servlet-class>com.noki.jichuInfo.CbDownload.CbDownload</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>PlDownload</servlet-name>
+		<servlet-class>com.noki.jichuInfo.PlDownload.PlDownload</servlet-class>
+	</servlet>
+	<servlet>
+
+		<servlet-name>CbyuanExcel</servlet-name>
+		<servlet-class>com.noki.jichuInfo.CbDownload.CbyuanExcel</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>SysManger</servlet-name>
+		<servlet-class>com.noki.syq.sysServerlet.SysManger</servlet-class>
+	</servlet>
+	<servlet>
+
+		<servlet-name>YufufeiServlet</servlet-name>
+		<servlet-class>com.noki.YuFuFei.YufufeiServlet</servlet-class>
+	</servlet>
+	<servlet>
+
+		<servlet-name>TaiZhangDownload</servlet-name>
+		<servlet-class>com.noki.TaiZhang.TaiZhangDownload</servlet-class>
+	</servlet>
+	<servlet>
+
+		<servlet-name>BGServlet</servlet-name>
+		<servlet-class>com.noki.biaogan.servlet.BGServlet</servlet-class>
+	</servlet>
+	<servlet>
+
+		<servlet-name>BGupdateServlet</servlet-name>
+		<servlet-class>com.noki.biaogan.servlet.BGupdateServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+
+
+		<servlet-name>YJServlet</servlet-name>
+		<servlet-class>com.noki.bgyj.Servlet.YJServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>yjser</servlet-name>
+		<servlet-class>com.noki.bgyj.Servlet.yjser</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>deleteSERVLET</servlet-name>
+		<servlet-class>com.noki.bgyj.Servlet.deleteSERVLET</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>HetongManage</servlet-name>
+		<servlet-class>com.noki.hetongguanli.servlet.HetongManage</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>Delete</servlet-name>
+		<servlet-class>com.noki.hetongguanli.servlet.Delete</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>AppUserServlet</servlet-name>
+		<servlet-class>com.noki.chaobiaorenyuan.servlet.AppUserServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ChaoBiaoRenServlet</servlet-name>
+		<servlet-class>com.noki.chaobiaorenyuan.servlet.ChaoBiaoRenServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>CBUserDlImageMessageServlet</servlet-name>
+		<servlet-class>com.noki.biaogan.servlet.CBUserDlImageMessageServlet</servlet-class>
+	</servlet>
+  <servlet>
+    <servlet-name>station</servlet-name>
+    <servlet-class>com.ptac.app.station.action.StationServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>commonBeanServlet</servlet-name>
+    <servlet-class>com.ptac.app.common.commonBeanServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>upload</servlet-name>
+    <servlet-class>com.noki.chaobiaorenyuan.servlet.upload</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>deleteFile</servlet-name>
+    <servlet-class>com.noki.chaobiaorenyuan.servlet.deleteFile</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>downloads</servlet-name>
+    <servlet-class>com.noki.chaobiaorenyuan.servlet.downloads</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>bz_solo_servlet</servlet-name>
+    <servlet-class>com.noki.jizhan.bz_solo_servlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>YanZhengWenJianServlet</servlet-name>
+    <servlet-class>com.noki.chaobiaorenyuan.servlet.YanZhengWenJianServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>FileUpServlet</servlet-name>
+    <servlet-class>com.noki.dataLoad.servlet.FileUpServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ExportExcelError</servlet-name>
+    <servlet-class>com.noki.dataLoad.servlet.ExportExcelError</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>UpdateGYS</servlet-name>
+    <servlet-class>com.noki.baobiaohuizong.qitabean.UpdateGYS</servlet-class>
+  </servlet>
+
+
+
+
+
+
+
+
+
+
+	<servlet-mapping>
+		<servlet-name>ProAuditingServlet</servlet-name>
+		<url-pattern>/servlet/ProAuditingServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>dwr-invoker</servlet-name>
+		<url-pattern>/dwr/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>fybzglServlet</servlet-name>
+		<url-pattern>/servlet/fybzglServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>zdyzhandianServlet</servlet-name>
+		<url-pattern>/servlet/zdyzhandianServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>ShenHe</servlet-name>
+		<url-pattern>/servlet/ShenHe</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>ZGsjServlet</servlet-name>
+		<url-pattern>/servlet/ZGsjServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>KtxsServlet</servlet-name>
+		<url-pattern>/servlet/KtxsServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DeleteId</servlet-name>
+		<url-pattern>/servlet/DeleteId</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>JyjfServlet</servlet-name>
+		<url-pattern>/servlet/JyjfServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>NewJyjfImp</servlet-name>
+		<url-pattern>/servlet/NewJyjfImp</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>ShengjzgSh</servlet-name>
+		<url-pattern>/servlet/ShengjzgSh</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ScMessage</servlet-name>
+		<url-pattern>/servlet/scmessage</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ElecBillServlet</servlet-name>
+		<url-pattern>/servlet/ElecBillServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>EnhanceElecBillServlet</servlet-name>
+		<url-pattern>/servlet/EnhanceElecBillServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>FinanceSelectServlet</servlet-name>
+		<url-pattern>/servlet/FinanceSelectServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>FinanceCheckServlet</servlet-name>
+		<url-pattern>/servlet/FinanceCheckServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>FinanceDaochuServlet</servlet-name>
+		<url-pattern>/servlet/FinanceDaochuServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CityFeeCheck</servlet-name>
+		<url-pattern>/servlet/CityFeeCheck</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>EnhanceCityFeeCheck</servlet-name>
+		<url-pattern>/servlet/EnhanceCityFeeCheck</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>UpXslTool</servlet-name>
+		<url-pattern>/servlet/UpXslTool</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UpXlsElectricBill</servlet-name>
+		<url-pattern>/servlet/UpXlsElectricBill</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UpXlsEnhanceElectricBill</servlet-name>
+		<url-pattern>/servlet/UpXlsEnhanceElectricBill</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>CityFeeCheckStationDetail</servlet-name>
+		<url-pattern>/servlet/CityFeeCheckStationDetail</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>testJdbc</servlet-name>
+		<url-pattern>/servlet/testJdbc</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UpXlsBillObserve</servlet-name>
+		<url-pattern>/servlet/UpXlsBillObserve</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ElecQuantityManage</servlet-name>
+		<url-pattern>/servlet/ElecQuantityManage</url-pattern>
+	</servlet-mapping>
+
+
+
+
+	<servlet-mapping>
+		<servlet-name>testjdbc</servlet-name>
+		<url-pattern>/servlet/testjdbc</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ElecQueryServlet</servlet-name>
+		<url-pattern>/servlet/ElecQueryServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>EnhanceElecQueryServlet</servlet-name>
+		<url-pattern>/servlet/EnhanceElecQueryServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ElecModifyServlet</servlet-name>
+		<url-pattern>/servlet/ElecModifyServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>EnhanceElecModifyServlet</servlet-name>
+		<url-pattern>/servlet/EnhanceElecModifyServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>XlsFileUploadServlet</servlet-name>
+		<url-pattern>/servlet/XlsFileUploadServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CityNewAddSiteQuantityServlet</servlet-name>
+		<url-pattern>/servlet/CityNewAddSiteQuantityServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ProvinceNewAddSiteQuantityServlet</servlet-name>
+		<url-pattern>/servlet/ProvinceNewAddSiteQuantityServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UserZibaodianAjaxServlet</servlet-name>
+		<url-pattern>/servlet/UserZibaodianAjaxServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CityMngCheckServlet</servlet-name>
+		<url-pattern>/servlet/CityMngCheckServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>BargainBillSelectServlet</servlet-name>
+		<url-pattern>/servlet/BargainBillSelectServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AddBargainServlet</servlet-name>
+		<url-pattern>/servlet/AddBargainServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DropBargainBillServlet</servlet-name>
+		<url-pattern>/servlet/DropBargainBillServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UpdateBargainBillServlet</servlet-name>
+		<url-pattern>/servlet/UpdateBargainBillServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>GdfsServlet</servlet-name>
+		<url-pattern>/servlet/GdfsServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>BargainBillInputServlet</servlet-name>
+		<url-pattern>/servlet/BargainBillInputServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>TempletDownLoadServlet</servlet-name>
+		<url-pattern>/servlet/TempletDownLoadServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CMCCUpXlsBillServlet</servlet-name>
+		<url-pattern>/servlet/CMCCUpXlsBillServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ModifyUnitPriceServlet</servlet-name>
+		<url-pattern>/servlet/ModifyUnitPriceServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ProvinceModifyUnitPriceServlet</servlet-name>
+		<url-pattern>/servlet/ProvinceModifyUnitPriceServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CityUnitpriceServlet</servlet-name>
+		<url-pattern>/servlet/CityUnitpriceServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CityUnitpriceDaoChuServlet</servlet-name>
+		<url-pattern>/servlet/CityUnitpriceDaoChuServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ProUnitpriceServlet</servlet-name>
+		<url-pattern>/servlet/ProUnitpriceServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ProUnitpriceDaoChuServlet</servlet-name>
+		<url-pattern>/servlet/ProUnitpriceDaoChuServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ProPicServlet</servlet-name>
+		<url-pattern>/servlet/ProPicServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CityPICServlet</servlet-name>
+		<url-pattern>/servlet/CityPICServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>SiteDetailCountServlet</servlet-name>
+		<url-pattern>/servlet/SiteDetailCountServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>ReadingRateSelectServlet</servlet-name>
+		<url-pattern>/servlet/ReadingRateSelectServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ReadingRateOutputServlet</servlet-name>
+		<url-pattern>/servlet/ReadingRateOutputServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CitySiteDetailCountServlet</servlet-name>
+		<url-pattern>/servlet/CitySiteDetailCountServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>EstimateContrastServlet</servlet-name>
+		<url-pattern>/servlet/EstimateContrastServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ContractBillServlet</servlet-name>
+		<url-pattern>/servlet/ContractBillServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>NewsServlet</servlet-name>
+		<url-pattern>/servlet/NewsServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>LiuChengInfo</servlet-name>
+		<url-pattern>/servlet/LiuChengInfo</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>EnhanceEleConfigurationServlet</servlet-name>
+		<url-pattern>/servlet/EnhanceEleConfigurationServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>LeaseBill</servlet-name>
+		<url-pattern>/servlet/LeaseBill</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>LeaseBillServlet</servlet-name>
+		<url-pattern>/servlet/LeaseBillServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>LeaseAuditServlet</servlet-name>
+		<url-pattern>/servlet/LeaseAuditServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>LeaseAudit</servlet-name>
+		<url-pattern>/servlet/LeaseAudit</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>LeaseBargainFeesServlet</servlet-name>
+		<url-pattern>/servlet/LeaseBargainFeesServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>LeaseFeesQueryServlet</servlet-name>
+		<url-pattern>/servlet/LeaseFeesQueryServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>StationInputServlet</servlet-name>
+		<url-pattern>/servlet/StationInputServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>LeaseFeesCountryAuditServlet</servlet-name>
+		<url-pattern>/servlet/LeaseFeesCountryAuditServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>LeaseFeesCityAuditServlet</servlet-name>
+		<url-pattern>/servlet/LeaseFeesCityAuditServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>LeaseStatServlet</servlet-name>
+		<url-pattern>/servlet/LeaseStatServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>LeaseWarnServlet</servlet-name>
+		<url-pattern>/servlet/LeaseWarnServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DetailServlet</servlet-name>
+		<url-pattern>/servlet/DetailServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>SingleSiteServlet</servlet-name>
+		<url-pattern>/servlet/SingleSiteServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>OverSiteServlet</servlet-name>
+		<url-pattern>/servlet/OverSiteServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>calibrationServerlet</servlet-name>
+		<url-pattern>/servlet/calibrationServerlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ElecBills</servlet-name>
+		<url-pattern>/servlet/ElecBills</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>PowerServlet</servlet-name>
+		<url-pattern>/servlet/PowerServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>MonShareServlet</servlet-name>
+		<url-pattern>/servlet/MonShareServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>MoveFixedElecServlet</servlet-name>
+		<url-pattern>/servlet/MoveFixedElecServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>HuoPiaoLvServlet</servlet-name>
+		<url-pattern>/servlet/HuoPiaoLvServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ProvServlet</servlet-name>
+		<url-pattern>/servlet/ProvServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>LuRuLiangServlet</servlet-name>
+		<url-pattern>/servlet/LuRuLiangServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>FangWenLiangServlet</servlet-name>
+		<url-pattern>/servlet/FangWenLiangServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CityServlet</servlet-name>
+		<url-pattern>/servlet/CityServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ComparedServlet</servlet-name>
+		<url-pattern>/servlet/ComparedServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>getMessageAction</servlet-name>
+		<url-pattern>/getMessageAction</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DbStationManageServlet</servlet-name>
+		<url-pattern>/servlet/DbStationManageServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DateRepeatServlet</servlet-name>
+		<url-pattern>/servlet/DateRepeatServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>SiteEveryClose</servlet-name>
+		<url-pattern>/servlet/SiteEveryClose</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>OneSiteDbServlet</servlet-name>
+		<url-pattern>/servlet/OneSiteDbServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>OneSiteDbShiServlet</servlet-name>
+		<url-pattern>/servlet/OneSiteDbShiServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CityRelationServlet</servlet-name>
+		<url-pattern>/servlet/CityRelationServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>TownRelationServlet</servlet-name>
+		<url-pattern>/servlet/TownRelationServlet</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet-mapping>
+		<servlet-name>PieChartServlet</servlet-name>
+		<url-pattern>/servlet/PieChartServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>ProvCheckServlet</servlet-name>
+		<url-pattern>/servlet/ProvCheckServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>zdcountconfigServlet</servlet-name>
+		<url-pattern>/servlet/zdcountconfigServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CountyVerifyServlet</servlet-name>
+		<url-pattern>/servlet/CountyVerifyServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ProvSendServlet</servlet-name>
+		<url-pattern>/servlet/ProvSendServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CitySendServlet</servlet-name>
+		<url-pattern>/servlet/CitySendServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CityCheckServlet</servlet-name>
+		<url-pattern>/servlet/CityCheckServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>CountySignCheckServlet</servlet-name>
+		<url-pattern>/servlet/CountySignCheckServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DownLoadAction</servlet-name>
+		<url-pattern>/servlet/DownLoadAction</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ProvinceSendServlet</servlet-name>
+		<url-pattern>/servlet/ProvinceSendServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>QyztServlet</servlet-name>
+		<url-pattern>/servlet/QyztServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DownloadServlet</servlet-name>
+		<url-pattern>/servlet/DownloadServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>GbsqServlet</servlet-name>
+		<url-pattern>/servlet/GbsqServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>GdfServlet</servlet-name>
+		<url-pattern>/servlet/GdfServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AccountWithoutServlet</servlet-name>
+		<url-pattern>/servlet/AccountWithoutServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>OverPowerServlet</servlet-name>
+		<url-pattern>/servlet/OverPowerServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AvgPriceServlet</servlet-name>
+		<url-pattern>/servlet/AvgPriceServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ElecfeesAnalyseServlet</servlet-name>
+		<url-pattern>/servlet/ElecfeesAnalyseServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ElectricAnalyseServlet</servlet-name>
+		<url-pattern>/servlet/ElectricAnalyseServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>GdfsElecBulletinServlet</servlet-name>
+		<url-pattern>/servlet/GdfsElecBulletinServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>LiuchServlet</servlet-name>
+		<url-pattern>/servlet/LiuchServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ElecfeesAnalyseServlet2</servlet-name>
+		<url-pattern>/servlet/ElecfeesAnalyseServlet2</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ElectricAnalyseServlet2</servlet-name>
+		<url-pattern>/servlet/ElectricAnalyseServlet2</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>GdfsElecBulletinServlet2</servlet-name>
+		<url-pattern>/servlet/GdfsElecBulletinServlet2</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ZwhdModelUpload</servlet-name>
+		<url-pattern>/servlet/ZwhdModelUpload</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WydfftUpload</servlet-name>
+		<url-pattern>/servlet/WydfftUpload</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CwybxUpload</servlet-name>
+		<url-pattern>/servlet/CwybxUpload</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ExcelModelDownload</servlet-name>
+		<url-pattern>/servlet/ExcelModelDownload</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CwybxWydfftHd</servlet-name>
+		<url-pattern>/servlet/CwybxWydfftHd</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WydfftAdd</servlet-name>
+		<url-pattern>/servlet/WydfftAdd</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WydfftUpdate</servlet-name>
+		<url-pattern>/servlet/WydfftUpdate</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>SjdfftqrUpdate</servlet-name>
+		<url-pattern>/servlet/SjdfftqrUpdate</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DxdfftqrAdd</servlet-name>
+		<url-pattern>/servlet/DxdfftqrAdd</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Dxdfftfx</servlet-name>
+		<url-pattern>/servlet/Dxdfftfx</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>DFDLservlet</servlet-name>
+		<url-pattern>/servlet/DFDLservlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WydfftDownload</servlet-name>
+		<url-pattern>/servlet/WydfftDownload</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CwybxDownload</servlet-name>
+		<url-pattern>/servlet/CwybxDownload</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WydfftDelete</servlet-name>
+		<url-pattern>/servlet/WydfftDelete</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CwybxDelete</servlet-name>
+		<url-pattern>/servlet/CwybxDelete</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>QxWydfftUpdate</servlet-name>
+		<url-pattern>/servlet/QxWydfftUpdate</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CwybxUpdate</servlet-name>
+		<url-pattern>/servlet/CwybxUpdate</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CwybxAdd</servlet-name>
+		<url-pattern>/servlet/CwybxAdd</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>SjdfftqrDownload</servlet-name>
+		<url-pattern>/servlet/SjdfftqrDownload</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>QxdfftqrDownload</servlet-name>
+		<url-pattern>/servlet/QxdfftqrDownload</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>LtdfftqrAdd</servlet-name>
+		<url-pattern>/servlet/LtdfftqrAdd</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>YddfftqrAdd</servlet-name>
+		<url-pattern>/servlet/YddfftqrAdd</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>LtdfftDownload</servlet-name>
+		<url-pattern>/servlet/LtdfftDownload</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DxdfftDownload</servlet-name>
+		<url-pattern>/servlet/DxdfftDownload</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DxdfftfxDownload</servlet-name>
+		<url-pattern>/servlet/DxdfftfxDownload</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DxdfftresultDownload</servlet-name>
+		<url-pattern>/servlet/DxdfftresultDownload</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>LtdfftUpload</servlet-name>
+		<url-pattern>/servlet/LtdfftUpload</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DxdfftUpload</servlet-name>
+		<url-pattern>/servlet/DxdfftUpload</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DxdfftfxUpload</servlet-name>
+		<url-pattern>/servlet/DxdfftfxUpload</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>SjyddfftDownload</servlet-name>
+		<url-pattern>/servlet/SjyddfftDownload</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>YddfftUpload</servlet-name>
+		<url-pattern>/servlet/YddfftUpload</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>LtdfftDownloadForWxg</servlet-name>
+		<url-pattern>/servlet/LtdfftDownloadForWxg</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DxdfftDownloadForWxg</servlet-name>
+		<url-pattern>/servlet/DxdfftDownloadForWxg</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DxdfftfxDownloadForWxg</servlet-name>
+		<url-pattern>/servlet/DxdfftfxDownloadForWxg</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>YddfftDownload</servlet-name>
+		<url-pattern>/servlet/YddfftDownload</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>LtdfftqrUpdate</servlet-name>
+		<url-pattern>/servlet/LtdfftqrUpdate</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CBUserServlet</servlet-name>
+		<url-pattern>/CBUserServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CBUserSendMessageServlet</servlet-name>
+		<url-pattern>/CBUserSendMessageServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Cbyuanservlet</servlet-name>
+		<url-pattern>/servlet/Cbyuanservlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Cbjihuaservlet</servlet-name>
+		<url-pattern>/servlet/Cbjihuaservlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>FtblServlet</servlet-name>
+		<url-pattern>/servlet/FtblServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>SfyzServlet</servlet-name>
+		<url-pattern>/servlet/SfyzServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>BiaoganServlet</servlet-name>
+		<url-pattern>/servlet/BiaoganServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DianjiaServlet</servlet-name>
+		<url-pattern>/servlet/DianjiaServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DianliangFenxiServlet</servlet-name>
+		<url-pattern>/servlet/DianliangFenxiServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DianfeiFenxiServlet</servlet-name>
+		<url-pattern>/servlet/DianfeiFenxiServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DianliangDownload</servlet-name>
+		<url-pattern>/servlet/DianliangDownload</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DianliangUpload</servlet-name>
+		<url-pattern>/servlet/DianliangUpload</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>BiaoganDownload</servlet-name>
+		<url-pattern>/servlet/BiaoganDownload</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ExcelDownload</servlet-name>
+		<url-pattern>/servlet/ExcelDownload</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DianliangExcelDownload</servlet-name>
+		<url-pattern>/servlet/DianliangExcelDownload</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CbDownload</servlet-name>
+		<url-pattern>/servlet/CbDownload</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>PlDownload</servlet-name>
+		<url-pattern>/servlet/PlDownload</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CbyuanExcel</servlet-name>
+		<url-pattern>/servlet/CbyuanExcel</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>SysManger</servlet-name>
+		<url-pattern>/servlet/SysManger</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>YufufeiServlet</servlet-name>
+		<url-pattern>/servlet/YufufeiServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>TaiZhangDownload</servlet-name>
+		<url-pattern>/servlet/TaiZhangDownload</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>BGServlet</servlet-name>
+		<url-pattern>/servlet/BGServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>BGupdateServlet</servlet-name>
+		<url-pattern>/servlet/BGupdateServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>YJServlet</servlet-name>
+		<url-pattern>/servlet/YJServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>yjser</servlet-name>
+		<url-pattern>/servlet/yjser</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>deleteSERVLET</servlet-name>
+		<url-pattern>/servlet/deleteSERVLET</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>HetongManage</servlet-name>
+		<url-pattern>/servlet/HetongManage</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Delete</servlet-name>
+		<url-pattern>/Delete</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AppUserServlet</servlet-name>
+		<url-pattern>/servlet/AppUserServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ChaoBiaoRenServlet</servlet-name>
+		<url-pattern>/ChaoBiaoRenServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CBUserDlImageMessageServlet</servlet-name>
+		<url-pattern>/CBUserDlImageMessageServlet</url-pattern>
+	</servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>station</servlet-name>
+    <url-pattern>/servlet/stationServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>commonBeanServlet</servlet-name>
+    <url-pattern>/servlet/commonBeanServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>upload</servlet-name>
+    <url-pattern>/servlet/upload</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>deleteFile</servlet-name>
+    <url-pattern>/servlet/deleteFile</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>downloads</servlet-name>
+    <url-pattern>/servlet/downloads</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>bz_solo_servlet</servlet-name>
+    <url-pattern>/bz_solo_servlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>YanZhengWenJianServlet</servlet-name>
+    <url-pattern>/servlet/YanZhengWenJianServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>FileUpServlet</servlet-name>
+    <url-pattern>/servlet/FileUpServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ExportExcelError</servlet-name>
+    <url-pattern>/servlet/ExportExcelError</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UpdateGYS</servlet-name>
+    <url-pattern>/servlet/UpdateGYS</url-pattern>
+  </servlet-mapping>
+	  <session-config>
+	  	<session-timeout>30</session-timeout>
+	  </session-config>
+</web-app>

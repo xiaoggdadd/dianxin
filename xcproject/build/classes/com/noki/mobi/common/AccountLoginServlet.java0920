@@ -1,0 +1,147 @@
+package com.noki.mobi.common;
+
+import javax.servlet.http.HttpServlet;
+import java.io.PrintWriter;
+import java.util.HashMap;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
+import javax.servlet.http.HttpSession;
+import javax.servlet.http.HttpServletResponse;
+
+public class AccountLoginServlet extends HttpServlet {
+    private static final String CONTENT_TYPE = "text/html; charset=UTF-8";
+
+    //Initialize global variables
+    public void init() throws ServletException {
+    }
+
+    //Process the HTTP Post request
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws
+            ServletException, IOException {
+        response.setContentType(CONTENT_TYPE);
+        String path = request.getContextPath();
+        System.out.println("path==" + path);
+        HttpSession session = request.getSession();
+        String accountname = request.getParameter("user");
+        System.out.println("ee:");
+        String password = request.getParameter("pass");
+        Account account = new Account();
+        account.setAccountName(accountname);
+        account.setPassword(password);
+        PrintWriter out = response.getWriter();
+        try {
+            int checkresult = account.checkLogin();
+            //int checkresult = 0;
+            System.out.println("accountLogin-ee:" + checkresult);
+            if (checkresult == 0) { //如果登录成功
+                //判断是否有权限，如果有,重定向到功能页面
+                session.setAttribute("account", account);
+                session.setAttribute("loginName", account.getAccountName());
+                session.setAttribute("accountSheng", account.getSheng());
+                session.setAttribute("accountShi",account.getShi());
+                session.setAttribute("accountxian",account.getXian());
+                session.setAttribute("accountRole",account.getRoleId());
+                //将用户信息放在session中
+
+                out.println("{success:true,url:\"web/main.html\"}");
+                //System.out.println("{success:true,url:\"web/main.html\"}");
+                return;
+                //  }
+
+            } else { //如果代码不存在
+
+                out.println(
+                        "{success:false,errors:[{id:\"user\",msg:\"用户名或者密码错误\"}]}");
+
+            }
+
+            /*
+                   if (checkresult == 0) { //如果登录成功
+              //判断是否有权限，如果有,重定向到功能页面
+              session.setAttribute("account", account);
+              //写入用户列表
+              HashMap userList = (HashMap) getServletContext().getAttribute(
+                  "userList");
+              System.out.println("userList" + userList);
+
+             if (userList != null && userList.containsValue(account.getAccountName())) {
+                System.out.println("containsValue" + userList);
+                session.setAttribute("msg", "该用户已经登陆！");
+                session.setAttribute("url", path+"/index.html");
+                response.sendRedirect(path+"/web/msg.jsp");
+                return;
+              }
+              else {
+                session.setAttribute("loginName", account.getAccountName());
+                session.setAttribute("accountSheng", account.getAccountName());
+                //将用户信息放在session中
+                response.sendRedirect(path+"/web/main.html");
+                return;
+              }
+
+                   }
+                   else if (checkresult == 1) { //如果代码不存在
+              response.setContentType("text/html; charset=GBK");
+              PrintWriter out = response.getWriter();
+              out.println("<script>");
+              out.println("alert('用户名不存在，请重新输入！');");
+              out.println("self.location='"+path+"/index.html?accountname=" +
+                          accountname + "'");
+              out.println("</script>");
+              out.flush();
+              out.close();
+
+              // session.setAttribute("msg","用户名不存在，请重新登陆！");
+              // session.setAttribute("url",path+"/index.html");
+              //response.sendRedirect(response.encodeURL(path+"/web/msg.jsp"));
+                   }
+                   else if (checkresult == 2) { //如果代码已经失效
+              response.setContentType("text/html; charset=GBK");
+              PrintWriter out = response.getWriter();
+              out.println("<script>");
+              out.println("alert('用户名无效，请重新输入！');");
+              out.println("self.location='"+path+"/index.html?accountname=" +
+                          accountname + "'");
+              out.println("</script>");
+              out.flush();
+              out.close();
+
+              //session.setAttribute("msg","用户名无效！");
+              //session.setAttribute("url","index.html");
+              //response.sendRedirect(response.encodeURL(path+"/web/msg.jsp"));
+                   }
+                   else { //如果密码不正确
+              System.out.println("如果密码不正确" + checkresult);
+              response.setContentType("text/html; charset=GBK");
+              PrintWriter out = response.getWriter();
+              out.println("<script>");
+              out.println("alert('密码不正确，请重新输入！');");
+              out.println("self.location='"+path+"/index.html?accountname=" +
+                          accountname + "'");
+              out.println("</script>");
+              out.flush();
+              out.close();
+
+              // session.setAttribute("msg","密码不正确！");
+              //session.setAttribute("url","index.html");
+              //response.sendRedirect(path+"/web/msg.jsp");
+                   }
+             */
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            //return;
+        }
+    }
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws
+            ServletException, IOException {
+        doPost(request, response);
+
+    }
+
+
+    //Clean up resources
+    public void destroy() {
+    }
+}

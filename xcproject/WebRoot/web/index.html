@@ -1,0 +1,99 @@
+<HTML>
+<HEAD>
+<TITLE>华威移动营销管理控制台</TITLE>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<style type="text/css">
+<!--
+.STYLE2 {	font-size: 9pt;
+	color: #68696e;
+}
+body {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+input{
+BORDER-RIGHT: #888888 1px solid; BORDER-TOP: #888888 1px solid; FONT-SIZE: 9pt; BORDER-LEFT: #888888 1px solid; BORDER-BOTTOM: #888888 1px solid; HEIGHT: 17px;
+}
+img{border:0}
+-->
+</style>
+</HEAD>
+<BODY BGCOLOR=#FFFFFF LEFTMARGIN=0 MARGINWIDTH=0>
+<!-- ImageReady Slices (登陆.psd) -->
+<TABLE WIDTH=1024 BORDER=0 CELLPADDING=0 CELLSPACING=0>
+	<TR>
+		<TD COLSPAN=3>
+			<IMG SRC="images/index_01.gif" WIDTH=1024 HEIGHT=135 ALT=""></TD>
+	</TR>
+	<TR valign="top">
+		<TD height="251" COLSPAN=3 background="images/index_02.gif">			<div align="center">
+		  <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="1024" height="118">
+                <param name="movie" value="images/flash.swf">
+                <param name="quality" value="high">
+                <embed src="images/flash.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="1024" height="118"></embed>
+              </object></td>
+            </tr>
+            <tr>
+              <td><div align="center">
+                <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="993" height="115">
+                  <param name="movie" value="images/baner-01.swf">
+                  <param name="quality" value="high">
+                  <embed src="images/baner-01.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="993" height="140"><param name="wmode" value="transparent"></embed>
+                </object>
+              </div></td>
+            </tr>
+          </table>
+	  </div></TD>
+	</TR>
+	<TR>
+		<TD ROWSPAN=2>
+			<IMG SRC="images/index_03.gif" WIDTH=664 HEIGHT=184 ALT=""></TD>
+		<TD width="187" height="87" background="images/index_04.gif"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+		<form action="/mobi/servlet/login" method="post" name="form1">
+          <tr>
+            <td width="50%" height="31"><span class="STYLE2">用户名：</span></td>
+            <td width="50%"><label>
+              <input name="accountname" type="text" size="12"   onkeypress="javascript:if(window.event.keyCode==13){check();}">
+            </label></td>
+          </tr>
+          <tr>
+            <td height="19"><span class="STYLE2">密　码：</span></td>
+            <td><input name="password" type="password" size="12" onkeypress="javascript:if(window.event.keyCode==13){check();}"></td>
+          </tr>
+		  </form>
+          <tr>
+            <td height="42" colspan="2"><table width="75%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td width="58%" height="35"><div align="center"><a href="#" onclick="check();"><img src="images/1_06.gif" width="51" height="21"></a></div></td>
+                  <td width="42%"><a href="#" onclick="document.form1.reset();"><img src="images/1_08.gif" width="51" height="21"></a></td>
+                </tr>
+            </table></td>
+          </tr>
+        </table></TD>
+		<TD ROWSPAN=2>
+			<IMG SRC="images/index_05.gif" WIDTH=173 HEIGHT=184 ALT=""></TD>
+	</TR>
+	<TR>
+		<TD>
+			<IMG SRC="images/index_06.gif" WIDTH=187 HEIGHT=97 ALT=""></TD>
+	</TR>
+</TABLE>
+<!-- End ImageReady Slices -->
+</BODY>
+</HTML>
+<script>
+document.form1.accountname.focus();
+function check(){
+if(document.form1.accountname.value.length==0 || document.form1.password.value.length==0){
+  alert("用户名或密码不能为空！");
+  document.form1.accountname.focus();
+  return;
+}
+else{
+  document.form1.submit();
+}
+
+}
+</script>

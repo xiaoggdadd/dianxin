@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name=”apple-mobile-web-app-capable” content=”yes” />
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="../css/xk-style.css" rel="stylesheet">
+    <link href="../css/xk-info.css" rel="stylesheet">
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../includes/ico/apple-touch-icon-114.png">
+    <link rel="apple-touch-icon-precomposed" href="../ico/apple-touch-icon-57.png">
+    <link rel="shortcut icon" href="../ico/favicon.png">
+    <script type="text/javascript" src="../js/pic/jquery.min.js"></script>
+    <script language="javascript"> 
+     function fClear(){ 
+	document.getElementById('txtTitle').value ="";
+	document.getElementById('txtContent').value ="";
+     } 
+    </script> 
+</head>
+<body>
+<header class="bar_fixed">
+	<div id="toolbar_1" class="toolbar">
+		<div class="ui-toolbar-left"><a href="javascript:history.go(-1);" class="ui-toolbar-backbtn"></a></div>
+		<h2 class="ui-toolbar-title">中国电信山东分公司基站抄表手机客户端</h2>
+		<div class="ui-toolbar-right"><span id="menu" class="ui-toolbar-home" onclick="show()"></span></div>
+	</div>
+	<div id="dropmenu" style="display:none;">
+	<nav>
+		<ul class="head-nav clearfix">
+			<li><a href="msgList.html"   title="">►通知消息</a></li>
+	        	<li><a href="msgAdd.html"  title="">►发送消息</a></li>
+		</ul>
+	</nav>        
+	</div>
+	<script language="javascript"> 
+	function show(){ 
+	with(document.getElementById('dropmenu').style){display==""&&(display="none")||(display="")} 
+	} 
+	function theStory() {
+	window.history.length <= 1 ? window.location.href = "../../": window.history.go( - 1)
+	} 
+	</script> 
+</header>
+  <div class="module_nav">基站抄表</div>
+  <article style="padding:0px 0 0px;">
+      <div class="pad8">
+		<table width="100%" border="0" cellpadding="3" cellspacing="0">
+		          <tbody>
+		                <tr>
+			              <th width="150px" height="35" class="fgray" align="right">基站名称：</th>
+			              <td>山东省济南市槐荫区白马社区槐荫站点</td>
+		               </tr>
+		                <tr>
+			              <th width="120px" height="35" class="fgray" align="right">&nbsp;</th>
+			              <td><select size="1"  id="selCity" name="selCity" style="font-family:微软雅黑;width:270px">
+					        <option>槐荫站点</option>
+					    </select>&nbsp;</td>
+		               </tr>
+		               <tr>
+			              <th width="120px" height="35" class="fgray" align="right">&nbsp;电表编号：</th>
+			              <td><select size="1"  id="selCity" name="selCity" style="font-family:微软雅黑;width:180px">
+					        <option>37011003027</option>
+					    </select>&nbsp;</td>
+		               </tr>
+		          	    <tr>
+			              <th width="120px" height="35" class="fgray" align="right">电表图片：</th>
+			              <td><input id="txtTitle" type="text"  style="width:180px"  value="图片文件路径" />
+			              <button class="buttonstyle" onclick="javascript:fClear();">图片选择</button>
+			              </td>
+		               </tr>
+		               <tr>
+			              <th width="120px" height="35" class="fgray" align="right">有无偷漏电：</th>
+			              <td>无<input id="rad01" name="rad" type="radio" value="0" checked/>&nbsp;&nbsp;有<input id="rad02" name="rad" type="radio" value="1"/>
+			              </td>
+			         </tr>
+			          <tr>
+			              <th width="81px" height="35" class="fgray" align="right" ></th>
+			              <td> <input id="txtTitle" type="text"  style="width:180px"   value="图片文件路径"/>
+			                   <button class="buttonstyle" onclick="javascript:fClear();">图片选择</button>
+			              </td>
+			         </tr>
+			          <tr>
+			              <th width="81px" height="35" class="fgray" align="right">电流数据：</th>
+			              <td> <input id="txtTitle" type="text"  style="width:180px"   value="图片文件路径"/>
+			                   <button class="buttonstyle" onclick="javascript:fClear();">图片选择</button>
+			              </td>
+			         </tr>
+			         <tr>
+			              <th width="81px" height="35" class="fgray" align="right">请输入电表数据：</th>
+			              <td> <input id="txtTitle" type="text"  style="width:180px"   value="567657.34"/></td>
+			         </tr>
+			         <tr>
+			              <th width="81px" height="35" class="fgray" align="right">抄表员：</th>
+			              <td>张小军</td>
+			         </tr>
+			         <tr>
+			              <th width="81px" height="35" class="fgray" align="right">抄表时间：</th>
+			              <td>2016-10-14 12:23:20</td>
+			         </tr>
+			         
+			          <tr>
+			              <th width="81px" height="40" class="fgray" align="right" >&nbsp;</th>
+			              <td>
+			              <button class="buttonstyle" onclick="javascript:alert('已发布成功。');">提交</button>&nbsp;&nbsp;
+			              <button class="buttonstyle" onclick="javascript:fClear();">重置</button>
+			              </td>
+			         </tr>
+		           </tbody>
+		        </table>
+		</div>
+</article>
+<footer>
+	<div  style="margin-top:0px;"></div>
+	<div class="foot-link"><a href="javascript:gotohead();" class="fgray">通知消息</a>&nbsp;&nbsp;<a href="../index.html" class="fgray">抄表流程</a></div>
+	<script type="text/javascript">
+	function gotohead(){
+	window.scrollTo(0, 1);
+	}
+	</script>
+    <div class="media-link"><a href="#" class="pc">&nbsp;</a></div>
+    <div class="copy">
+		中国铁塔山东省公司&nbsp;&nbsp;Copyright &copy; 2016-2018
+    </div>
+</footer>
+<script src="../../includes/js/widget/gotop.js"></script>
+<script>
+	$('#gotop').gotop();	
+function closes(obj){
+	var a = document.getElementById(obj);
+	a.style.display= 'none';
+}	
+</script>
+</body>
+</html>

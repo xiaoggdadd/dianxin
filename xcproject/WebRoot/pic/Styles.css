@@ -1,0 +1,157 @@
+BODY {
+	FONT-SIZE: 12px;  FONT-FAMILY: "ËÎÌו"; 
+}
+
+INPUT.BUTTON
+{
+    BORDER-STYLE: solid; 
+    BORDER-COLOR: #a0a070;
+    BORDER-WIDTH: 1px;
+	FONT-SIZE: 9pt; 
+	HEIGHT: 20px; 
+	FONT-FAMILY:Verdana;
+	BACKGROUND-COLOR: #edefe0;
+	CURSOR: hand; 
+}
+
+INPUT.BUTTONCOLOR
+{
+    BORDER-STYLE: none; 
+    BORDER-COLOR: #808080;
+    BORDER-WIDTH: 1px;
+	FONT-SIZE: 9pt; 
+	HEIGHT: 20px; 
+	FONT-FAMILY:Verdana;
+	COLOR: #ffffff;
+	BACKGROUND-COLOR: #808080;
+	CURSOR: hand; 
+}
+
+INPUT.TBUTTON
+{
+    BORDER-STYLE: none; 
+    BORDER-COLOR: #ffffff;
+    BORDER-WIDTH: 1px;
+	FONT-SIZE: 9pt; 
+	HEIGHT: 16px; 
+	FONT-FAMILY:Verdana;
+	COLOR: #0000FF;
+	BACKGROUND-COLOR: #ffffff;
+	CURSOR: hand; 
+}
+
+INPUT.GBUTTON
+{
+    BORDER-STYLE: none; 
+    BORDER-COLOR: #ffffff;
+    BORDER-WIDTH: 1px;
+	FONT-SIZE: 9pt; 
+	HEIGHT: 16px; 
+	FONT-FAMILY:Verdana;
+	COLOR: #0000FF;
+	BACKGROUND-COLOR: #CCFFCC;
+	CURSOR: hand; 
+}
+
+TD {
+	FONT-SIZE: 9pt; line-height:1.2;
+}
+
+.title {
+	FONT-WEIGHT: normal; FONT-SIZE: 12px; COLOR: #ff0000; FONT-FAMILY: "ËÎÌו", "Helvetica", "sans-serif"; TEXT-ALIGN: left
+}
+.contentbox {
+	OVERFLOW: auto; BACKGROUND-COLOR: #fcfcfc
+}
+.content {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; PADDING-BOTTOM: 10px; PADDING-TOP: 10px
+}
+.tab-on {
+	BORDER-RIGHT: #cccccc 1px; PADDING-RIGHT: 2px; BORDER-TOP: #cccccc 1px solid; PADDING-LEFT: 2px; PADDING-BOTTOM: 2px; BORDER-LEFT: #cccccc 1px solid; WIDTH: 120px; CURSOR: hand; COLOR: #000000; PADDING-TOP: 2px; BORDER-BOTTOM: #cccccc 1px; BACKGROUND-COLOR: #ffffff
+}
+.tab-off {
+	BORDER-RIGHT: #cccccc 1px; PADDING-RIGHT: 2px; BORDER-TOP: #cccccc 1px solid; PADDING-LEFT: 2px; PADDING-BOTTOM: 2px; BORDER-LEFT: #cccccc 1px solid; WIDTH: 120px; CURSOR: hand; COLOR: #666666; PADDING-TOP: 2px; BORDER-BOTTOM: #cccccc 1px solid; BACKGROUND-COLOR: #f6f6f6
+}
+.tab-none {
+	BORDER-RIGHT: #cccccc 1px; PADDING-RIGHT: 2px; BORDER-TOP: #cccccc 1px; PADDING-LEFT: 2px; PADDING-BOTTOM: 2px; BORDER-LEFT: #cccccc 1px solid; PADDING-TOP: 2px; BORDER-BOTTOM: #cccccc 1px solid
+}
+.tab-none2 {
+	BORDER-RIGHT: #cccccc 1px; PADDING-RIGHT: 2px; BORDER-TOP: #cccccc 1px; PADDING-LEFT: 2px; PADDING-BOTTOM: 2px; BORDER-LEFT: #cccccc 0px solid; PADDING-TOP: 2px; BORDER-BOTTOM: #cccccc 1px solid
+}
+.tab-content {
+	BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px; VERTICAL-ALIGN: top; BORDER-LEFT: #cccccc 1px solid; BORDER-BOTTOM: #cccccc 1px solid; BACKGROUND-COLOR: #ffffff
+}
+
+.td_heading {
+	BORDER-RIGHT: #cccccc 1px; PADDING-RIGHT: 3px; BORDER-TOP: #cccccc 1px; PADDING-LEFT: 10px; PADDING-BOTTOM: 3px; BORDER-LEFT: #cccccc 1px; COLOR: #999999; PADDING-TOP: 3px; BORDER-BOTTOM: #cccccc 1px dashed
+}
+.td_title {
+	BORDER-RIGHT: #e0e0e0 1px solid; BORDER-TOP: #e0e0e0 1px solid; BORDER-LEFT: #e0e0e0 1px solid; COLOR: #666666; BORDER-BOTTOM: #e0e0e0 1px solid; BACKGROUND-COLOR: #f6f6f6
+}
+.td_text {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; PADDING-BOTTOM: 10px; PADDING-TOP: 10px
+}
+
+.table1{
+	background-color:white;
+	FONT-FAMILY: Courier New, Courier;
+	font-size:12px
+}
+.td_out{
+	FONT-FAMILY: Courier New, Courier;
+	font-size:12px;
+	color:#000000;
+	height:15px;
+	border:1 solid #ffffff;
+}
+.td_over{
+	FONT-FAMILY: Courier New, Courier;
+	font-size:12px;
+	cursor:default;
+	background-color:#3366cc;
+	border:1 solid #000000;
+	color:#ffffff;
+	height:15px
+}
+.slv{
+	vertical-align:bottom;
+	FONT-FAMILY: Courier New, Courier;
+	font-size:12px;
+	border-left-width:0;
+	border-top-width:0;
+	border-bottom-width:0;
+	border-right:0 solid #000000;
+	vertical-align:middle;
+	height:18px;
+	color:#000000;
+}
+.down {
+	position:relative;
+	left:-2px;
+	font-size:11px;
+	vertical-align:middle;
+	width:16;
+	height:16;
+	color:#2050b0;
+	background-color:#D0DFF7;
+	border:1 solid #9fA3Ce;
+	writing-mode:tb-rl;
+	font-weight:bold;
+}
+.seldiv{
+	position:absolute;
+	z-index:1000;
+	overflow-x:hidden;
+	border-left:1 solid #000000;
+	border-bottom:1 solid #000000;
+	border-right:1 solid #000000;
+	SCROLLBAR-FACE-COLOR: #d0dff7; 
+	SCROLLBAR-HIGHLIGHT-COLOR: #d0dff7; 
+	SCROLLBAR-SHADOW-COLOR: #FFFFFF; 
+	SCROLLBAR-3DLIGHT-COLOR: #FFFFFF; 
+	SCROLLBAR-ARROW-COLOR: #ffffff; 
+	SCROLLBAR-TRACK-COLOR: #ffffff; 
+	SCROLLBAR-DARKSHADOW-COLOR: #d0dff7;
+}
+
+A {text-decoration:none}

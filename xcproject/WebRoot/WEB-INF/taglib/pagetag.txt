@@ -1,0 +1,10 @@
+需要在web.xml中增加
+<web-app>
+...
+<taglib>
+    <taglib-uri>/pagetag</taglib-uri>
+    <taglib-location>/WEB-INF/taglib/pagetag.tld</taglib-location>
+</taglib>
+
+..
+<web-app>

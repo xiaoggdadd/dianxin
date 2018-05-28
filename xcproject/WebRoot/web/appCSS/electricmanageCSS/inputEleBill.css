@@ -1,0 +1,42 @@
+.style1 {
+	color: #014F8A;
+	font-weight: bold;
+	line-height: 22pt;
+}
+
+.style2 {
+	color: red;
+	font-weight: bold;
+	line-height: 22pt;
+}
+
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+
+.style4 {
+	color: #ff9900;
+	font-weight: bold;
+}
+
+#id1 {
+	BORDER-RIGHT: #2C59AA 1px solid;
+	PADDING-RIGHT: 2px;
+	BORDER-TOP: #2C59AA 1px solid;
+	PADDING-LEFT: 2px;
+	FONT-SIZE: 12px;
+	FILTER: progid : DXImageTransform.Microsoft.Gradient ( GradientType = 0,
+		StartColorStr = #ffffff, EndColorStr = #D7E7FA );
+	BORDER-LEFT: #2C59AA 1px solid;
+	CURSOR: hand;
+	COLOR: black;
+	PADDING-TOP: 2px;
+	BORDER-BOTTOM: #2C59AA 1px solid
+}
+
+img {
+	border: 0px;
+}

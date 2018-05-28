@@ -1,0 +1,12 @@
+@charset "utf-8";
+html{margin:0; padding:0; height:100%}
+body{margin:0; padding:0; background:#2678c2 url(../loginimages/loginbg.jpg) no-repeat center; font-size:13px; color:#000; font-family:微软雅黑, 宋体; text-align:center; min-height:500px; min-width:800px;}
+form, ul, li{margin:0; padding:0; list-style:none }
+input, textarea{font-size:14px; font-family:微软雅黑, 宋体; color:#000 }
+.loginbg{width:700px; height:200px; margin:-100px 0 0 -350px; position:absolute; left:50%; top:50%; text-align:left}
+.i1{padding:65px 0 0 520px; height:30px;}
+.i2{padding:10px 0 0 520px; height:30px;}
+.i3{padding:10px 0 0 489px; float:left; width:96px;}
+.i4{padding:8px 0 0 5px;}
+.loginput{background:none; border:none; padding:0; margin:0; height:24px; line-height:24px; width:140px; }
+.loginbtn{background:url(../loginimages/loginbtn.png) no-repeat 0 0; width:84px; height:29px; border:0; cursor:pointer;}

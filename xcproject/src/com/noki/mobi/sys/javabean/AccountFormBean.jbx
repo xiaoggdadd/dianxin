@@ -1,0 +1,20 @@
+[PropertyInfo]
+accountId,int,false,false, , ,true,<default>
+accountName,String,false,false, , ,true,<default>
+address,String,false,false, , ,true,<default>
+buMen,String,false,false,buMen,buMen,true,<default>
+email,String,false,false, , ,true,<default>
+memo,String,false,false, , ,true,<default>
+mobile,String,false,false, , ,true,<default>
+name,String,false,false, , ,true,<default>
+position,String,false,false, , ,true,<default>
+roleId,int,false,false, , ,true,<default>
+roleName,String,false,false, , ,true,<default>
+sex,String,false,false, , ,true,<default>
+tel,String,false,false, , ,true,<default>
+zip,String,false,false,zip,zip,true,<default>
+[IconNames]
+
+
+
+

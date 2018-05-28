@@ -1,0 +1,27 @@
+
+#bar {
+    FLOAT: left;
+    WIDTH:20px;
+    HEIGHT:400px;
+}
+#list {
+	PADDING-BOTTOM: 0px; 
+	PADDING-LEFT: 0px; 
+	PADDING-RIGHT: 0px; 
+	PADDING-TOP: 0px;
+	LIST-STYLE-TYPE: none; 
+	WIDTH: 100px; 
+	BACKGROUND: #ccc; 
+	FLOAT: left; 
+}
+#list LI {
+	PADDING-BOTTOM: 10px; 
+	PADDING-LEFT: 10px; 
+	PADDING-RIGHT: 10px; 
+	PADDING-TOP: 10px;
+}
+.lihover {
+	BACKGROUND: #555; 
+	COLOR: #fff; 
+	CURSOR: hand
+}

@@ -1,0 +1,227 @@
+<%@page import="com.noki.zwhd.manage.CwManage"%>
+<%@page import="com.noki.zwhd.manage.WyManage"%>
+<%@ page contentType="text/html; charset=UTF-8"%>
+<%@ page import="java.sql.ResultSet"%>
+<%@ page import="java.text.*"%>
+<%@ page import="java.util.List"%>
+<%@ page import="com.noki.zwhd.model.HdjlBean"%>
+<%@ page
+	import="java.util.ArrayList,java.util.Date,com.noki.mobi.common.Account"%>
+<%@ page
+	import="com.noki.util.CTime,com.noki.jizhan.DianBiaoBean,com.noki.mobi.common.CommonBean"%>
+	
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<%
+	String path = request.getContextPath();
+	String servletName = request.getParameter("servletname");
+	System.out.println("servletName:" + servletName);
+	String mfile = "";
+%>
+
+<script src="<%=path%>/javascript/jquery-1.4.2.js"></script>
+<script type="text/javascript" src="<%=path%>/javascript/wait.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="images/css.css">
+<title>无标题文档</title>
+
+<style>
+.style1 {
+	color: #014F8A;
+	font-weight: bold;
+	line-height: 22pt;
+}
+
+.style2 {
+	color: red;
+	font-weight: bold;
+	line-height: 22pt;
+}
+
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+
+.style4 {
+	color: #ff9900;
+	font-weight: bold;
+}
+
+#id1 {
+	BORDER-RIGHT: #2C59AA 1px solid;
+	PADDING-RIGHT: 2px;
+	BORDER-TOP: #2C59AA 1px solid;
+	PADDING-LEFT: 2px;
+	FONT-SIZE: 12px;
+	FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0,
+		StartColorStr=#ffffff, EndColorStr=#D7E7FA );
+	BORDER-LEFT: #2C59AA 1px solid;
+	CURSOR: hand;
+	COLOR: black;
+	PADDING-TOP: 2px;
+	BORDER-BOTTOM: #2C59AA 1px solid
+}
+
+img {
+	border: 0px;
+}
+</style>
+</head>
+
+<body class="body" style="overflow-x:hidden;">
+	<LINK href="../../images/css.css" type=text/css rel=stylesheet>
+	<script language="javascript">
+		var path = '<%=path%>';
+		function ShowHideSearchRegion(trObject,SelfObject)
+		{
+				if(trObject.style.display == "none")
+				{
+					trObject.style.display = "";
+					SelfObject.innerHTML = "<img border=\"0\" src=\"../../images/1.gif\">";
+					
+				}
+				else
+				{
+					trObject.style.display = "none";
+					SelfObject.innerHTML = "<img border=\"0\" src=\"../../images/SearchDown.gif\">";
+				}
+		}
+		
+		$(function() {
+			$("#heduiBtn").click(function() {
+				heduiBtn();
+				showdiv("请稍等..............");
+			});	
+		}); 
+		
+		function heduiBtn(){
+			document.form1.action=path+"/servlet/CwybxWydfftHd";
+			document.form1.submit();
+		}
+	
+	</script>
+	<form action="" name="form1" method="post">
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td width="10"></td>
+				<td>&nbsp;</td>
+				<td width="12"></td>
+			</tr>
+			<tr>
+				<td width="10" height="532">&nbsp;</td>
+				<td valign="top"><table width="100%" border="0" cellspacing="0"
+						cellpadding="0">
+						<tr>
+							<td colspan="3"><table width="100%" border="0"
+									cellspacing="0" cellpadding="0">
+									<tr>
+										<td width="11%"><img src="../../images/in_11.gif"
+											width="122" height="58" /></td>
+										<td width="87%" background="../../images/in_12.gif"><span
+											class="style4">物业数据电费分摊与财务已报销核对</span></td>
+										<td width="2%"><img src="../../images/in_13.gif"
+											width="25" height="58" /></td>
+									</tr>
+								</table></td>
+						</tr>
+						<tr>
+							<td colspan="3">
+								<table cellspacing="0" cellpadding="0" width="100%" border="0">
+									<tbody>
+										<tr id="SearchRegion">
+											<td height="51" colspan="3"
+												background="../../images/img_15.gif">&nbsp;</td>
+
+											<td width="95%"><table width="100%" border="0"
+													cellspacing="0" cellpadding="0">
+													<tr>
+														<td height="46" colspan="4"><span class="style1">
+																本功能用于批量导入产品数据及批量更正产品数据。</span></td>
+													</tr>
+													<tr>
+														<td height="145" colspan="3" rowspan="2"><div
+																align="center">
+																<img src="../../images/dao.gif" width="132" height="119" />
+															</div></td>
+														<td width="66%" height="64"><p>
+																请选择您要核对的物业数据财务分摊批次和财务已报销批次</p>
+														</td>
+													</tr>
+
+													<tr>
+														<td height="39" valign="top">
+															<div id="hedui" style="position: relative; width: 580px; height: 23px; cursor: pointer; left: 0px; TOP: -23PX ">
+																财务-已报销导入批次号:<select class="selected_font" name="cwYearMonth"><option value="0" selected="selected">未选择</option>
+																<%
+																	CwManage cwManage = new CwManage();
+																	List<HdjlBean> cwybxhdjlList = cwManage.searchCwbxhdjl();
+																	for(HdjlBean hdjl:cwybxhdjlList){
+																%>
+																<option value="<%=hdjl.getYEARMONTH()%>"><%=hdjl.getYEARMONTH() %></option>
+																<%
+																	}
+																 %>
+																 </select>
+																 物业数据-电费分摊导入批次号:<select class="selected_font" name="wyYearMonth"><option value="0" selected="selected">未选择</option>
+																 <% 
+																 	WyManage wyManage = new WyManage();
+																 	List<HdjlBean> wydffthdjlList = wyManage.searchWydffthdjl();
+																 	for(HdjlBean hdjl:wydffthdjlList){
+																 %>
+																 <option value="<%=hdjl.getYEARMONTH()%>"><%=hdjl.getYEARMONTH()%></option>
+																 <% 
+																 	}
+																 %>
+																 </select>
+															</div>
+													</tr>
+													<tr>
+														<td height="39" valign="top" colspan="4">
+															<div id="heduiBtn"
+																style="width:60px;height:23px;cursor:pointer;float:right;position:relative;right:8px">
+															<img src="<%=path%>/images/xinzeng.png" width="100%" height="100%">
+															<span
+																style="font-size:12px;position: absolute;left:27px;top:3px;color:white">执行</span>
+														</div> 
+														</td>
+													</tr>
+													<tr>
+														<td height="39" valign="top" colspan="3"></td>
+													</tr>
+													<tr>
+														<td height="51" colspan="4"><div align="center">
+
+															</div></td>
+													</tr>
+												</table></td>
+											<td background="../../images/img_17.gif">&nbsp;</td>
+										</tr>
+										<tr>
+											<td width="29" height="26"><img
+												src="../../images/img_18.gif" width="29" height="26" /></td>
+											<td colspan="3" align="middle"
+												background="../../images/img_19.gif"></td>
+											<td width="25"><img src="../../images/img_20.gif"
+												width="25" height="26" /></td>
+										</tr>
+									</tbody>
+								</table></td>
+						</tr>
+					</table>
+				</td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>&nbsp;</td>
+				<td></td>
+			</tr>
+		</table>
+		<input type="hidden" name="servletname" value="<%=servletName%>" />
+	</form>
+</body>
+</html>

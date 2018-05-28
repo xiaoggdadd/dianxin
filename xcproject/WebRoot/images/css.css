@@ -1,0 +1,60 @@
+TD {
+	FONT-SIZE: 11pt; COLOR: #000000; LINE-HEIGHT: 15pt
+}
+A:link {
+	FONT-SIZE: 11pt; COLOR: #014f8a; LINE-HEIGHT: 18px; FONT-FAMILY: "宋体"; TEXT-DECORATION: none
+}
+A:visited {
+	FONT-SIZE: 11pt; COLOR: #014f8a; LINE-HEIGHT: 18px; FONT-FAMILY: "宋体"; TEXT-DECORATION: none
+}
+A:hover {
+	FONT-SIZE: 11pt; COLOR: #FF0000; LINE-HEIGHT: 18px; FONT-FAMILY: "宋体"; TEXT-DECORATION: none
+}
+a:active {
+	font-size: 11pt;
+	color: #990099;
+}
+.hand {
+	CURSOR: hand
+}
+.ti-z1 {
+	FONT-SIZE: 16pt; FILTER: Glow(Color=#000000, Strength=1) DropShadow(Color=#000000, OffX=1, OffY=1, Positive=1); COLOR: #ffffff; LINE-HEIGHT: 140%; TEXT-ALIGN: left
+}
+.title_black {
+	FONT-WEIGHT: bold; FONT-SIZE: 9pt; COLOR: #0e57a9; LINE-HEIGHT: 22px; FONT-FAMILY: "宋体"
+}
+INPUT[type="text"]{BORDER-RIGHT: #ffffff 0px solid; 
+BORDER-TOP: #ffffff 1px solid; FONT-SIZE: 9pt; COLOR: #014F8A;
+BORDER-LEFT: #ffffff 0px solid; WIDTH: 120px; 
+BORDER-BOTTOM: #3179ce 1px solid; HEIGHT: 17px;
+ BACKGROUND-COLOR: #ffffff
+}
+.mo{BORDER-RIGHT: #ffffff 0px solid; 
+BORDER-TOP: #ffffff 1px solid; FONT-SIZE: 9pt; COLOR: #014F8A;
+BORDER-LEFT: #ffffff 0px solid; width:80%;
+BORDER-BOTTOM: #3179ce 1px solid; HEIGHT: 17px;
+ BACKGROUND-COLOR: #ffffff
+}
+.mo2{BORDER-RIGHT: #ffffff 0px solid; 
+BORDER-TOP: #ffffff 1px solid; FONT-SIZE: 9pt; COLOR: #014F8A;
+BORDER-LEFT: #ffffff 0px solid; width:100%;
+BORDER-BOTTOM: #3179ce 1px solid; HEIGHT: 17px;
+ BACKGROUND-COLOR: #ffffff
+}
+.tdMenuSelect{
+
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; FONT-SIZE: 13pt; CURSOR: hand;  BORDER-BOTTOM-WIDTH: 1px; COLOR: #0000ff; BACKGROUND-COLOR: #84b9a4; BORDER-RIGHT-WIDTH: 0px
+
+}
+.tdMenuNormal1 {
+	FONT-SIZE: 9pt; COLOR: #014F8A;CURSOR: hand;  LINE-HEIGHT: 13pt
+}
+.tdMenu1{
+
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; FONT-SIZE: 13pt; CURSOR: hand;  BORDER-BOTTOM-WIDTH: 1px; COLOR: #0000ff; BACKGROUND-COLOR: #84b9a4; BORDER-RIGHT-WIDTH: 0px
+
+}
+.tdMenu2{
+	FONT-SIZE: 9pt; COLOR: #014F8A; CURSOR: hand; LINE-HEIGHT: 13pt
+}
+  .bttcn{ color:white;font-weight:bold;}

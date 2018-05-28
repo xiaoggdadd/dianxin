@@ -1,0 +1,17 @@
+[PropertyInfo]
+beilv,String,false,false,beilv,beilv,true,<default>
+csds,String,false,false,csds,csds,true,<default>
+cssytime,String,false,false,cssytime,cssytime,true,<default>
+dbid,String,false,false,dbid,dbid,true,<default>
+dbxh,String,false,false,dbxh,dbxh,true,<default>
+dbyt,String,false,false,dbyt,dbyt,true,<default>
+dllx,String,false,false,dllx,dllx,true,<default>
+memo,String,false,false,memo,memo,true,<default>
+sszy,String,false,false,sszy,sszy,true,<default>
+ydsb,String,false,false,ydsb,ydsb,true,<default>
+id,int,false,false,id,id,true,<default>
+[IconNames]
+
+
+
+

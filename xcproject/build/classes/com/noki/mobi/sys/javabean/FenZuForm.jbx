@@ -1,0 +1,10 @@
+[PropertyInfo]
+id,String,false,false,id,id,true,<default>
+name,String,false,false,name,name,true,<default>
+memo,String,false,false,memo,memo,true,<default>
+orderid,String,false,false,orderid,orderid,true,<default>
+[IconNames]
+
+
+
+

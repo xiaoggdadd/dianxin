@@ -1,0 +1,24 @@
+[PropertyInfo]
+accountCode,String,false,false, , ,true,<default>
+accountId,String,false,false, , ,true,<default>
+accountName,String,false,false, , ,true,<default>
+address,String,false,false, , ,true,<default>
+age,String,false,false, , ,true,<default>
+email,String,false,false, , ,true,<default>
+loginTime,long,false,false, , ,true,<default>
+memo,String,false,false, , ,true,<default>
+mobile,String,false,false, , ,true,<default>
+name,String,false,false, , ,true,<default>
+password,String,false,false, , ,true,<default>
+personTypeId,String,false,false, , ,true,<default>
+position,String,false,false, , ,true,<default>
+productType,String,false,false, , ,true,<default>
+sex,String,false,false, , ,true,<default>
+structId,String,false,false, , ,true,<default>
+structid,String,false,false, , ,false,<default>
+roleId,String,false,false,roleId,roleId,true,<default>
+[IconNames]
+
+
+
+

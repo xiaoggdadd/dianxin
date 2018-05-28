@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link href="../css/content.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../../javascript/jquery-3.3.1.min.js"> </script>
+	<script src="../../javascript/jquery-migrate-1.2.1.js"></script>
+
+<script type="text/javascript">
+$(function () {
+        $('#container').highcharts({
+            title: {
+                text: '[枣庄峄城大安村东口基站]2016年度标杆数据分析图',
+                x: -20 			//center
+            },
+            subtitle: {
+                text: '',
+                x: -20
+            },
+            xAxis: {
+                categories: ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12']
+            },
+            yAxis: {
+                title: {
+                    text: '基站标杆值 (度)'
+                },
+                plotLines: [{
+                    value: 0,
+                    width: 1,
+                    color: '#808080'
+                }]
+            },
+            tooltip: {
+                valueSuffix: '度'
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle',
+                borderWidth: 0
+            },
+            series: [{
+                name: '标杆值',
+                data: [12,13,25,21,23,21,25,26,23,18,13,9]
+            }, {
+                name: '平均值',
+                data: [15,15,15,15, 15, 15, 15, 15, 15, 15, 15, 15]
+            }]
+        });
+    });
+    
+</script>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+	<tr valign="top">
+
+		<td width="12"><img src="../images/space.gif" width="12" height="17" /></td>
+		<td>
+			<div class="content01">
+				<div class="tit01">2016年度各基站标杆数据分析图</div>
+				<div class="content01_1">
+					<table width="100%" border="0" cellpadding="2" cellspacing="0" class="tb_select" >
+						<tr >
+							<td>
+							       所属区域：山东枣庄市&nbsp;
+								<select name="select2" id="select" style="width:100px;">
+								<option>峄城区</option>
+								<option>市中区</option>
+								<option>台儿庄区</option>
+								<option>峄城区</option>
+								<option>滕州市</option>
+								</select>&nbsp;&nbsp;&nbsp;
+								基站名称：
+								<select name="select2" id="select" style="width:160px;">
+								<option>大安村东口基站</option>
+								</select>
+								&nbsp;&nbsp;
+								年度：&nbsp;&nbsp;
+								<select name="select2" id="select" style="width:80px;">
+								<option>2016</option>
+								<option>2017</option>
+								<option>2018</option>
+								<option>2019</option>
+								<option>2020</option>
+								</select>	
+							</td>
+						</tr>
+						<tr >
+							<td align="right">
+								<input name="button2" type="submit" class="btn_c1" id="button2" value="输出图表" />&nbsp; 
+								
+							</td>
+						</tr>
+					</table>
+					
+					<table width="100%" border="0" cellspacing="5" cellpadding="0">
+						  <tr align="center">
+						    <td width="50%" class="border01">
+						    <script src="../highcharts/js/highcharts.js"></script>
+								<script src="../highcharts/js/modules/exporting.js"></script>
+								<div id="container" style="min-width: 480px; height: 340px; margin: 0 auto"></div>
+								</div>
+								<br>
+								<div id="container1" style="min-width: 480px; height: 30px; margin: 0 auto;text-align:left">
+								</div>
+						    </td>
+						  </tr>
+						</table>
+						<div class="space_h_10"></div>
+				</div>
+			</div>
+		</td></tr></table>
+</body>
+</html>

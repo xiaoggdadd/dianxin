@@ -1,0 +1,167 @@
+@CHARSET "UTF-8";
+/**********************************
+从页面拷贝过来的css第一部分开始
+********************************** */
+ html ,body{
+  margin: 0px;
+	 width: 100%;
+	height: 100%;
+	
+	}
+
+body {
+	margin: 0px;padding:0px;
+	background : url("../pic/2015xczh.png") center  no-repeat ;
+	background-attachment: fixed;
+	background-size:100% 100%;
+	
+
+}
+
+img {
+	border: 0px;
+}
+
+form {
+	margin: 0px;
+	padding: 0px
+}
+
+.whiteFont { 
+	font-size: 12px;
+	color: #fff;
+}
+
+.btnLogin {
+	width: 40px;
+	height: 15px;
+	background: url(images/btn_login.jpg) 0 0 no-repeat;
+	border: 0;
+	color: #fff;
+	
+}
+
+.sysInfo {
+	width: 250px;
+	position: relative;
+	top: 50px;
+	right: 130px;
+}
+
+.loginForm {
+	left: 130px;
+	position: relative;
+	width: 300px;
+	top: -35px;
+}
+
+.loginForm table tr td {
+	font: normal 12px tahoma, arial, verdana, sans-serif;
+}
+
+#loginpanel {
+	top: 15%;
+	position: relative;
+	margin-left: aotu;
+	margin-right: auto;
+}
+
+#overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 99;
+	width: 1600px;
+	height: 800px;
+	background-color: #000;
+	filter: alpha(opacity =         40);
+	-moz-opacity: 0.6;
+	opacity: 0.6;
+}
+
+.floatDiv {
+	padding: 0 0 0 0;
+	position: absolute;
+	width: 300px;
+	margin: 0 0 0 0;
+	z-index: 100;
+	border: 1px solid #DADADA;
+	background: #FFF;
+	padding: 1px;
+	float: left;
+	right: 500px;
+	top: 250px;
+}
+
+.floatDiv .divTitle {
+	background: #E0E0E0 url('images/dragForm/title_bg.gif');
+	background-position: top left;
+	background-repeat: repeat-x;
+	height: 25px;
+	line-height: 25px;
+	padding: 0px 4px;
+	cursor: default;
+}
+
+.floatDiv .divContent {
+	padding: 3px;
+	min-height: 100px;
+	height: auto;
+	cursor: default;
+}
+
+.floatDiv .divFoot {
+	background: #F0F0F0;
+	text-align: right;
+	padding: 4px;
+	background: #E0E0E0 url('images/dragForm/bottom_bg.gif');
+	background-position: top left;
+	background-repeat: repeat-x;
+}
+
+.floatDiv input.divButton {
+	background: #E0E0E0 url('images/dragForm/button_bg.gif');
+	background-position: top left;
+	background-repeat: repeat-x;
+	border: 1px solid #D1D3D2;
+	height: 21px;
+	font-size: 12px;
+	padding: 2px 5px;
+	color: #626264;
+}
+
+.table_1 {
+	margin-top: 200px;
+	margin-left: 980px;
+}
+
+.username_input {
+	width: 115px;
+	height: 19px;
+	background-image: url(../images/input_bg.jpg);
+	border: 0px solid #9E0E0E;
+	font: 15px Verdana, Arial;
+	color: #1B1B1B;
+}
+
+#btnLogin {
+	width: 50px;
+	height: 30px;
+	cursor: pointer;
+	float: left;
+	position: relative;
+	left: 10px;
+}
+
+#btnReset {
+	width: 50px;
+	height: 30px;
+	cursor: pointer;
+	float: left;
+	position: relative;
+	left: 30px ;
+}
+.aaaa{color:red;}
+/**********************************
+从页面拷贝过来的css第一部分结束
+********************************** */

@@ -1,0 +1,35 @@
+/*必填标志*/
+.notnull {
+	color: red;
+	font-weight: bold;
+}
+/*标签*/
+.form_label{
+			text-align: left;
+			font-family: "宋体";
+			font-size: 12px;
+			height:23px
+}
+/*录入框体*/
+.selected_font{
+	width:130px;
+	font-family:"宋体";
+	font-size:12px;
+	line-height:100%
+}
+/*数据显示头部分*/
+.relativeTag{
+	z-index:10;
+	position:relative;
+	top:expression(this.offsetParent.scrollTop)
+}
+/*数据显示字体*/  
+.bttcn{color:BLACK;font-weight:bold;}
+
+
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px
+}

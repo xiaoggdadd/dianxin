@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link href="../css/content.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../../javascript/jquery-3.3.1.min.js"> </script>
+	<script src="../../javascript/jquery-migrate-1.2.1.js"></script>
+<script type="text/javascript">
+$(function () {
+        $('#container').highcharts({
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: '2016年10月份枣庄铁塔各区域电费统计分析图'
+            },
+            subtitle: {
+                text: ''
+            },
+            xAxis: {
+                categories: [
+                    '薛城区',
+                    '市中区',
+                    '峄城区',
+                    '山亭区',
+                    '台儿庄区',
+                    '滕州市'
+                ]
+            },
+            
+            yAxis: {
+                min: 2,
+                title: {
+                    text: '电量（度）'
+                }
+            },
+            tooltip: {
+                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                    '<td style="padding:0"><b>{point.y:.0f}</b></td></tr>',
+                footerFormat: '</table>',
+                shared: true,
+                useHTML: true
+            },
+            plotOptions: {
+                column: {
+                    pointPadding: 0.3,
+                    borderWidth: 0
+                }
+            },
+            series: [{
+                name: '8月',
+                data: [80,120, 140, 160,200,150]
+            }, {
+                name: '9月',
+                data: [100, 80, 120, 150,100,120]
+            }, {
+                name: '10月',
+                data: [60, 90, 100, 100,12,0180]
+            }
+            
+            ]
+        });
+    });
+</script>
+
+
+
+
+</head>
+<body>
+
+<div class="content01"><div class="tit01">枣庄铁塔各区域电费统计分析图</div><div class="content01_1">
+<table width="100%" border="0" cellpadding="2" cellspacing="0" class="tb_select" >
+	<tr >
+		<td>
+		年度：
+			&nbsp;<select name="select2" id="select" style="width:80px;">
+						<option>2016</option>
+						<option>2017</option>
+						<option>2018</option>
+			           </select>			
+			&nbsp;&nbsp;
+		月份：
+			&nbsp;<select name="select2" id="select" style="width:80px;">
+						<option>01</option>
+						<option>02</option>
+						<option>03</option>
+			           </select>			
+			&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;<input name="button2" type="submit" class="btn_c1" id="button2" value="输出图表" />
+	</tr>
+</table>
+
+<table width="100%" border="0" cellspacing="5" cellpadding="0">
+  <tr align="center">
+    <td width="50%" class="border01">
+    <script src="../highcharts/js/highcharts.js"></script>
+		<script src="../highcharts/js/modules/exporting.js"></script>
+		<div id="container" style="min-width: 480px; height: 340px; margin: 0 auto">
+		</div>
+		<br>
+		<div id="container1" style="min-width: 480px; height: 30px; margin: 0 auto;text-align:left">
+		<strong>&nbsp;分析结果：滕州市区域基站电费数据与上月差别较大，请调查调整。</strong>
+		</div>
+    </td>
+  </tr>
+
+</table>
+	</div>
+</div>
+</body>
+</html>

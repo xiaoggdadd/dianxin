@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name=”apple-mobile-web-app-capable” content=”yes” />
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="../css/xk-style.css" rel="stylesheet">
+    <link href="../css/xk-info.css" rel="stylesheet">
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../includes/ico/apple-touch-icon-114.png">
+    <link rel="apple-touch-icon-precomposed" href="../ico/apple-touch-icon-57.png">
+    <link rel="shortcut icon" href="../ico/favicon.png">
+    	<script type="text/javascript" src="../../javascript/jquery-3.3.1.min.js"> </script>
+	<script src="../../javascript/jquery-migrate-1.2.1.js"></script>
+	
+    <!-- 初始化变量 -->
+   </script>
+</head>
+<body>
+<header class="bar_fixed">
+	<div id="toolbar_1" class="toolbar">
+		<div class="ui-toolbar-left"><a href="javascript:history.go(-1);" class="ui-toolbar-backbtn"></a></div>
+		<h2 class="ui-toolbar-title">通知消息一览</h2>
+		<div class="ui-toolbar-right"><span id="menu" class="ui-toolbar-home" onclick="show()"></span></div>
+	</div>
+	<div id="dropmenu" style="display:none;">
+	<nav>
+		<ul class="head-nav clearfix">
+			<li><a href="msgList.html"   title="">►通知消息</a></li>
+	        	<li><a href="msgAdd.html"  title="">►发送消息</a></li>
+		</ul>
+	</nav>        
+	</div>
+	<script language="javascript"> 
+	function show(){ 
+	with(document.getElementById('dropmenu').style){display==""&&(display="none")||(display="")} 
+	} 
+	function theStory() {
+	window.history.length <= 1 ? window.location.href = "../../": window.history.go( - 1)
+	} 
+	</script> 
+</header>
+<div class="module_nav">通知消息一览</div>
+  <article style="padding:0px 0 0px;">
+      <div class="ui-refresh1">
+			<ul class="newslist data-list3">
+				  <li><a href="msgDetail.html">【枣庄建维部】[王立军]有关系统升级的通知...</a></li>
+				  <li><a href="msgDetail.html">【枣庄建维部】[王立军]加强KPI绩效考核的通知...</a></li>
+				  <li><a href="msgDetail.html">【枣庄建维部】[王立军]有关系统功能修改的通知...</a></li>
+				  <li><a href="msgDetail.html">【枣庄建维部】[王立军]迎接领导检查通知..</a></li>
+			</ul>
+	</div>
+</article>
+<div class="module_nav1">只显示最近10条记录</div>
+<footer>
+	<div  style="margin-top:0px;"></div>
+	<div class="foot-link"><a href="javascript:gotohead();" class="fgray">返回顶部</a>&nbsp;&nbsp;<a href="../index.html" class="fgray">返回首页</a></div>
+	<script type="text/javascript">
+	function gotohead(){
+	window.scrollTo(0, 1);
+	}
+	</script>
+    <div class="media-link"><a href="#" class="pc">电脑版</a></div>
+    <div class="copy">
+		中国铁塔山东省公司&nbsp;&nbsp;Copyright &copy; 2016-2018
+    </div>
+</footer>
+<script src="../../includes/js/widget/gotop.js"></script>
+<script>
+	$('#gotop').gotop();	
+function closes(obj){
+	var a = document.getElementById(obj);
+	a.style.display= 'none';
+}	
+</script>
+</body>
+</html>

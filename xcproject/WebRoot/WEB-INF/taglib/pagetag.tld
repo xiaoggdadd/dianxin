@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee web-jsptaglibrary_2_0.xsd"
+    version="2.0">
+    <description>a page tag</description>
+    <tlib-version>1.0</tlib-version>
+
+  <short-name>pagetag</short-name>
+  <uri>/pagetag</uri>
+  <description>
+	A page tag
+  </description>
+ <!--
+   	  <page:pagetag flag="init" 
+	   listname="selectedlist"  
+	   checkboxname="itemSelect" 
+	   keyforpage="id"        
+	   keyforpagetype="int"    
+	   canfenyesubmit="true"   
+	   pagename="userslist.jsp"  
+	   formname="form1" 
+	   /> 
+	   
+	  <page:pagetag flag="page" 
+		  head="true" 
+		  pagelink="true" 
+		  jumpto="true" 
+		  perpage="true"  />
+		  
+	  <page:pagetag flag="select" 
+		  all="true"    
+		  allnot="true" 
+		  reverse="true" 
+		  reversercur="true" 
+		  cur="true" 
+		  curnot="true"
+		  selected="true"
+			  
+	     />
+ -->
+  <tag>
+    <name>pagetag</name>
+    <tag-class>com.scj.page.PageTag</tag-class>
+    <body-content>jsp</body-content>
+    <attribute><name>flag</name></attribute>
+    <attribute> <name>listname</name></attribute>
+    <attribute> <name>checkboxname</name> </attribute>
+    <attribute> <name>keyforpage</name></attribute>
+    <attribute> <name>keyforpagetype</name></attribute>
+    <attribute><name>canfenyesubmit</name></attribute>
+    <attribute><name>formname</name></attribute>
+    <attribute><name>pagename</name></attribute>
+    <attribute><name>queryname</name></attribute>
+    <attribute><name>version</name></attribute>
+    <attribute><name>assure</name></attribute>
+    
+   <attribute><name>head</name></attribute>
+    <attribute><name>pagelink</name></attribute>
+    <attribute><name>jumpto</name></attribute>
+    <attribute><name>perpage</name></attribute>
+    <attribute>
+    	<name>perpagecount</name></attribute>
+    	
+   <attribute><name>all</name></attribute>
+    <attribute><name>allnot</name></attribute>
+    <attribute><name>reverse</name></attribute>
+    <attribute><name>reversecur</name></attribute>
+    <attribute><name>cur</name></attribute>
+    <attribute><name>curnot</name></attribute>	
+    <attribute><name>selected</name></attribute>
+    <attribute><name>unselected</name></attribute>
+    <description>
+
+    </description>
+  </tag>
+
+  <tag>
+    <name>iterate</name>
+    <tag-class>com.scj.page.IterateTag</tag-class>
+    <tei-class>com.scj.page.IterateTEI</tei-class>
+    <body-content>jsp</body-content>
+    <attribute><name>id</name><required>true</required></attribute>   
+    <attribute><name>name</name><required>true</required></attribute>
+    <attribute><name>useexternlist</name></attribute>
+    
+    <description>
+
+    </description>
+  </tag>
+   <tag>
+    <name>checkbox</name>
+    <tag-class>com.scj.page.CheckBoxTag</tag-class>
+    <body-content>jsp</body-content>
+    <attribute><name>id</name></attribute>   
+    <attribute><name>name</name><required>true</required></attribute>
+    <attribute><name>value</name><rtexprvalue>true</rtexprvalue></attribute>     
+    <attribute><name>checked</name></attribute>   
+    <attribute><name>classes</name></attribute>   
+    <attribute><name>disabled</name></attribute>   
+    <attribute><name>height</name></attribute>   
+    <attribute><name>onclick</name></attribute>   
+    <attribute><name>ondbclick</name></attribute>   
+    <attribute><name>onfocus</name></attribute>   
+    <attribute><name>onkeydown</name></attribute>   
+    <attribute><name>onkeypress</name></attribute>   
+    <attribute><name>onkeyup</name></attribute>   
+    <attribute><name>style</name></attribute>   
+    <attribute><name>size</name></attribute>   
+    <attribute><name>readonly</name></attribute>   
+    <attribute><name>onselect</name></attribute>   
+    <attribute><name>width</name></attribute>  
+      <attribute><name>checked</name></attribute>   
+    <description>
+
+    </description>
+  </tag>
+  
+   <tag>
+    <name>lookup</name>
+    <tag-class>com.scj.page.LookupTag</tag-class>
+    <body-content>jsp</body-content>
+    <attribute><name>id</name></attribute>   
+    <attribute><name>name</name><required>true</required></attribute>
+    <attribute><name>value</name><rtexprvalue>true</rtexprvalue></attribute>     
+    <attribute><name>checked</name></attribute>   
+    <attribute><name>classes</name></attribute>   
+    <attribute><name>disabled</name></attribute>   
+    <attribute><name>height</name></attribute>   
+    <attribute><name>onclick</name></attribute>   
+    <attribute><name>ondbclick</name></attribute>   
+    <attribute><name>onfocus</name></attribute>   
+    <attribute><name>onkeydown</name></attribute>   
+    <attribute><name>onkeypress</name></attribute>   
+    <attribute><name>onkeyup</name></attribute>   
+    <attribute><name>style</name></attribute>   
+    <attribute><name>size</name></attribute>   
+    <attribute><name>readonly</name></attribute>   
+    <attribute><name>onselect</name></attribute>   
+    <attribute><name>width</name></attribute>   
+    <description>
+
+    </description>
+  </tag>
+</taglib>
